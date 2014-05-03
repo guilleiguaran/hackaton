@@ -1,115 +1,80 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
+Syntax error: Undefined variable: "$primary-color".
+        on line 99 of /media/sf_rails_projects/HackathonPresidencial/hackaton/assets/css/_base.scss, in `sans'
+        from line 99 of /media/sf_rails_projects/HackathonPresidencial/hackaton/assets/css/_base.scss
+        from line 1 of /media/sf_rails_projects/HackathonPresidencial/hackaton/assets/css/index.scss
 
-body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
-}
-
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-}
-
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
-}
-
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-}
-
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
-
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
-
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
+Backtrace:
+/media/sf_rails_projects/HackathonPresidencial/hackaton/assets/css/_base.scss:99:in `sans'
+/media/sf_rails_projects/HackathonPresidencial/hackaton/assets/css/_base.scss:99
+/media/sf_rails_projects/HackathonPresidencial/hackaton/assets/css/index.scss:1
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/script/tree/variable.rb:49:in `_perform'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/script/tree/node.rb:50:in `perform'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:326:in `block (2 levels) in visit_mixin'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:326:in `map'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:326:in `block in visit_mixin'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:98:in `block in with_mixin'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:121:in `with_frame'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:98:in `with_mixin'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:318:in `visit_mixin'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:79:in `block in with_base'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:121:in `with_frame'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:79:in `with_base'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:389:in `block (2 levels) in visit_rule'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:389:in `map'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:389:in `block in visit_rule'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:387:in `visit_rule'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:79:in `block in with_base'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:121:in `with_frame'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:79:in `with_base'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:297:in `block (2 levels) in visit_import'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:297:in `map'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:297:in `block in visit_import'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:88:in `block in with_import'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:121:in `with_frame'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:88:in `with_import'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:294:in `visit_import'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:79:in `block in with_base'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:121:in `with_frame'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/stack.rb:79:in `with_base'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:152:in `visit'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/base.rb:52:in `map'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:151:in `visit'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/root_node.rb:36:in `css_tree'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/tree/root_node.rb:20:in `render'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/engine.rb:274:in `render'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:414:in `update_stylesheet'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:186:in `each'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/plugin.rb:82:in `update_stylesheets'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/exec.rb:489:in `watch_or_update'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/exec.rb:346:in `process_result'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/exec.rb:43:in `parse'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/lib/sass/exec.rb:22:in `parse!'
+/home/oz/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/sass-3.3.7/bin/sass:13:in `<top (required)>'
+/home/oz/.rbenv/versions/1.9.3-p448/bin/sass:23:in `load'
+/home/oz/.rbenv/versions/1.9.3-p448/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined variable: \"$primary-color\".\A         on line 99 of /media/sf_rails_projects/HackathonPresidencial/hackaton/assets/css/_base.scss, in `sans'\A         from line 99 of /media/sf_rails_projects/HackathonPresidencial/hackaton/assets/css/_base.scss\A         from line 1 of /media/sf_rails_projects/HackathonPresidencial/hackaton/assets/css/index.scss"; }

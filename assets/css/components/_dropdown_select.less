@@ -1,0 +1,72 @@
+/* drop down select */
+
+.cd-dropdown {
+	position: relative;
+	width: 100%;
+	display: block;
+	&.cd-active > span {
+		color: @cyan;
+		&:after { content: '\25B2'; }
+	}
+	& > span {
+		.sans(1.1em, normal, @gray-a);
+		.transition;
+		background: white;
+		cursor: pointer;
+		display: block;
+		height: 40px;
+		line-height: 40px;
+		padding: 0 50px 0 16px;
+		position: relative;
+		width: 100%;
+		&:after {
+			.absolute-expanded(15%, auto, 0, 15%);
+			border-left: 1px solid @gray-d;
+			content: '\25BC';
+			font-size: 12px;
+			line-height: 8px;
+			padding: 10px 16px;
+			width: 44px;
+		}
+	}
+	ul {
+		.absolute-tlwh(0, 0, 100%, auto);
+		display: block;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		li { 
+			display: block;
+			position: absolute;
+			width: 100%;
+			span {
+				.sans(1em, normal, @gray-a);
+				background: white;
+				cursor: pointer;
+				display: block;
+				line-height: 40px;
+				padding: 0 30px 0 16px;
+				width: 100%;
+				&:hover {
+					background: @cyan;
+					color: white;
+				}
+			}
+		}
+	}
+	& > span, & ul li span {
+		-webkit-backface-visibility: hidden;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	& > span, & ul li:nth-last-child(-n + 3) span {
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	}
+	&.cd-active > span, &.cd-active ul li span {
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	}
+}

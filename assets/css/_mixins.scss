@@ -1,0 +1,154 @@
+/* functions */
+
+@function rc($px) {
+	@return rem-calc($px);
+}
+
+@function black($opacity) {
+	@return rgba(0, 0, 0, $opacity);
+}
+
+@function white($opacity) {
+	@return rgba(255, 255, 255, $opacity);
+}
+
+@function u($args) {
+	@return unquote($args);
+}
+
+
+/* position mixins */
+
+@mixin absolute-centered($w: rc(320), $h: rc(320)) {
+	height: $h; width: $w; top: 50%; left: 50%;
+	margin-top: $h / -2; 
+	margin-left: $w / -2;
+	position: absolute;
+}
+
+@mixin absolute-expanded($t: 0, $l: 0, $r: 0, $b: 0) {
+	top: $t; left: $l; right: $r; bottom: $b;
+	position: absolute;
+}
+
+@mixin absolute-tlwh($t: 0, $l: 0, $w: 0, $h: 0) {
+	top: $t; left: $l; width: $w; height: $h;
+	position: absolute;
+}
+
+@mixin translate-2d($x: 0, $y: 0) {
+	transform: translate($x, $y);
+	-ms-transform: translate($x, $y);
+	-webkit-transform: translate($x, $y);
+}
+
+
+
+/* visual mixins */
+
+@mixin box-shadow($args) {
+	-moz-box-shadow: $args;
+	-webkit-box-shadow: $args;
+	box-shadow: $args;
+}
+
+@mixin rounded-corners($r: 5px) {
+	border-radius: $r;
+	-webkit-border-radius: $r;
+	-moz-border-radius: $r;
+}
+
+@mixin gradient($c1, $c2) {
+  background-color: $c2; /* Fallback Color */
+  background: -webkit-gradient(linear, left top, left bottom, from($c1), to($c2)); /* Saf4+, Chrome */
+  background: -webkit-linear-gradient(top, $c1, $c2); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background:    -moz-linear-gradient(top, $c1, $c2); /* FF3.6 */
+  background:     -ms-linear-gradient(top, $c1, $c2); /* IE10 */
+  background:      -o-linear-gradient(top, $c1, $c2); /* Opera 11.10+ */
+  background:         linear-gradient(top, $c1, $c2);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#{$c1}", EndColorStr="#{$c2}");
+}
+
+@mixin gradient-h($c1, $c2) {
+  background-color: $c2; /* Fallback Color */
+  background: -webkit-gradient(linear, left top, right top, from($c1), to($c2)); /* Saf4+, Chrome */
+  background: -webkit-linear-gradient(left, $c1, $c2); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background:    -moz-linear-gradient(left, $c1, $c2); /* FF3.6 */
+  background:     -ms-linear-gradient(left, $c1, $c2); /* IE10 */
+  background:      -o-linear-gradient(left, $c1, $c2); /* Opera 11.10+ */
+  background:         linear-gradient(left, $c1, $c2);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr="#{$c1}", EndColorStr="#{$c2}");
+}
+
+@mixin animation($args) {
+	-moz-animation: $args;
+	-o-animation: $args;
+	-webkit-animation: $args;
+	animation: $args;
+}
+
+@mixin circular-icon($d: rc(32), $bg: white, $h: $primary, $fg: $gray-4, $fs: rc(15)) {
+	@include rounded-corners(50%);
+	@include transition(0.200s, background);
+	background: $bg;
+	border: none;
+	color: $fg;
+	display: block;
+	font-size: $fs;
+	height: $d;
+	line-height: $d;
+	padding: 0;
+	text-align: center;
+	width: $d;
+	&:hover, &.hovered {
+		background: $h;
+		color: white;
+	}
+	i {
+		@include transition(0.200s);
+		margin-left: 1px;
+	}
+}
+
+
+/* other mixins */
+
+@mixin transition($t: 0.250s, $p: all) {
+	-webkit-transition: $p $t ease-in-out;
+	-moz-transition: $p $t ease-in-out;
+	-o-transition: $p $t ease-in-out;
+	-ms-transition: $p $t ease-in-out;
+	transition: $p $t ease-in-out;
+}
+
+@mixin transition-ex($args) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-o-transition: $args;
+	-ms-transition: $args;
+	transition: $args;
+}
+
+@mixin user-select($args) {
+	-khtml-user-select: $args;
+	-moz-user-select: $args;
+	-ms-user-select: $args;
+	-webkit-touch-callout: $args;
+	-webkit-user-select: $args;
+	user-select: $args;
+}
+
+@mixin backface-visibility($args) {
+	-webkit-backface-visibility: $args;
+	-moz-backface-visibility: $args;
+	-ms-backface-visibility: $args;
+	backface-visibility: $args;
+}
+
+.blurred {
+	filter: blur(4px); 
+	-webkit-filter: blur(4px); 
+	-moz-filter: blur(4px);
+	-o-filter: blur(4px); 
+	-ms-filter: blur(4px);
+}

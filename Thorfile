@@ -13,6 +13,7 @@ class Convert < Thor
 
   desc "all", "Convert sass and coffee"
   def all
+    puts "recompiling sass and coffee files"
     invoke :sass
     invoke :coffee
   end

@@ -1,5 +1,17 @@
-h1 {
-    span {
-        color: red;
+@import "_base";
+
+.app, .inner-wrap, .off-canvas-wrap, .inner-nav, .main-section, .steps {
+    height: 100%;
+}
+
+.header {
+    background: $red;
+    height: 160px;
+    position: relative;
+    h1 {
+        @include absolute-expanded;
+        @include sans(50, 300, white);
+        line-height: 160px;
+        margin: 0;
     }
 }
