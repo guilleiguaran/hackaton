@@ -1,6 +1,7 @@
 {
   "name": "hackaton",
   "dependencies": {
+    "foundation": "latest",
     "backbone": "1.1.0",
     "modernizr": "latest",
     "knockback": "latest",
