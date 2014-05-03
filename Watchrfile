@@ -1,0 +1,3 @@
+watch /assets\/.*\.scss/ do |md| `thor convert:sass` end
+watch /assets\/.*\.sass/ do |md| `thor convert:sass` end
+watch /assets\/.*\.coffee/ do |md| `thor convert:coffee` end
