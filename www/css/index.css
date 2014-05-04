@@ -6144,6 +6144,9 @@ body {
           -ms-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
           margin-left: 1px; }
+    .steps .step p {
+      padding-top: 16px;
+      padding-bottom: 0; }
 
 ul.team {
   list-style: none; }
