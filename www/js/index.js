@@ -29,7 +29,8 @@
       'step1': 'step1',
       'step2': 'step2',
       'step3': 'step3',
-      'social': 'social'
+      'social': 'social',
+      'candidate': 'candidate'
     };
 
     AppRouter.prototype.home = function() {
@@ -45,7 +46,8 @@
       return $('#main-section').fadeOut('fast', function() {
         $('#main-section').html(html);
         $('#main-section').fadeIn();
-        return NProgress.done();
+        NProgress.done();
+        return $('#cbp-qtrotator').cbpQTRotator();
       });
     };
 
@@ -79,6 +81,16 @@
       });
     };
 
+    AppRouter.prototype.candidate = function() {
+      var html;
+      html = kb.renderTemplate('candidate-template', kb.viewModel());
+      return $('#main-section').fadeOut('fast', function() {
+        $('#main-section').html(html);
+        $('#main-section').fadeIn();
+        return NProgress.done();
+      });
+    };
+
     AppRouter.prototype.before = function() {
       return NProgress.start();
     };
@@ -93,6 +105,10 @@
 
   $(function() {
     return $('.video').fitVids();
+  });
+
+  $(document).on('click', "[data-bypass]", function(e) {
+    return false;
   });
 
   $(document).on('click', "a[href^='/']:not([data-bypass])", function(e) {

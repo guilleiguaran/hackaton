@@ -56,11 +56,12 @@ window.app =
 # Backbone router
 class window.AppRouter extends Backbone.Router
   routes:
-    ''        : 'home'
-    'step1'   : 'step1'
-    'step2'   : 'step2'
-    'step3'   : 'step3'
-    'social'  : 'social'
+    ''          : 'home'
+    'step1'     : 'step1'
+    'step2'     : 'step2'
+    'step3'     : 'step3'
+    'social'    : 'social'
+    'candidate' : 'candidate'
  
   home: ->
     html = kb.renderTemplate('home-template', kb.viewModel())
@@ -83,6 +84,7 @@ class window.AppRouter extends Backbone.Router
       $('#main-section').html(html)
       $('#main-section').fadeIn()
       NProgress.done()
+      $('#cbp-qtrotator').cbpQTRotator();
 
   step2: ->
     html = kb.renderTemplate('step2-template', kb.viewModel())
@@ -105,17 +107,25 @@ class window.AppRouter extends Backbone.Router
       $('#main-section').fadeIn()
       NProgress.done()
 
+  candidate: ->
+    html = kb.renderTemplate('candidate-template', kb.viewModel())
+    $('#main-section').fadeOut 'fast', ->
+      $('#main-section').html(html)
+      $('#main-section').fadeIn()
+      NProgress.done()
+
   before: ->
     NProgress.start()
 
   after: ->
     $(document).foundation()
 
-
 # Application entry point
 $ ->
   $('.video').fitVids();
 
+$(document).on 'click', "[data-bypass]", (e) ->
+  return false
 
 $(document).on 'click', "a[href^='/']:not([data-bypass])", (e) ->
     href = $(@).attr('href')

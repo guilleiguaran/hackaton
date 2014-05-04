@@ -26,7 +26,11 @@
             target = S('#' + this.href.split('#')[1]),
             siblings = S('dd > .content', accordion),
             aunts = $('dd', accordion),
-            settings = accordion.data(self.attr_name(true) + '-init'),
+            settings = {
+              active_class: 'active',
+              multi_expand: false,
+              toggleable: true
+            },
             active_content = S('dd > .content.' + settings.active_class, accordion),
             active_parent = S('dd.' + settings.active_class, accordion);
         e.preventDefault();

@@ -106,6 +106,22 @@ body {
 	}
 }
 
+.accordion {
+	dd {
+		a {
+			background: $primary;
+			color: white;
+			font-size: rc(20);
+			&:hover {
+				background: $lprimary;
+			}
+		}
+		&.active {
+			a { background: $dprimary; }
+		}
+	}
+}
+
 .section {
 	background: white(0.9);
 	padding: rc(16);
@@ -130,6 +146,9 @@ body {
 		margin-top: rc(32);
 		padding: rc(24 0 8);
 		border-top: 1px solid black(0.1);
+		a {
+			font-size: rc(32);
+		}
 	}
 	.video {
 		padding-bottom: rc(16);
