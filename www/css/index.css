@@ -6144,9 +6144,15 @@ body {
           -ms-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
           margin-left: 1px; }
-    .steps .step p {
-      padding-top: 16px;
-      padding-bottom: 0; }
+  .steps p {
+    padding-top: 1rem;
+    padding-bottom: 0; }
+  .steps h3.error {
+    margin: -0.625rem 0 1rem;
+    color: #ed5124;
+    font-size: 1.125rem; }
+  .steps a.button {
+    margin-bottom: 1rem; }
 
 ul.team {
   list-style: none; }

@@ -13,6 +13,7 @@
     onDeviceReady: function() {
       window.router = new AppRouter();
       Backbone.history.start();
+      $.support.cors = true;
     },
     receivedEvent: function(id) {}
   };
@@ -95,7 +96,10 @@
     };
 
     AppRouter.prototype.before = function() {
-      return NProgress.start();
+      NProgress.start();
+      return $("*").animate({
+        scrollTop: 0
+      }, 0);
     };
 
     AppRouter.prototype.after = function() {
@@ -112,6 +116,33 @@
 
   $(document).on('click', "[data-bypass]", function(e) {
     return false;
+  });
+
+  $(document).on('click', "#place-query", function(e) {
+    var $id;
+    $id = $('#user-id').val();
+    $("#q-error").hide();
+    $("#q-success").hide();
+    return $.ajax({
+      type: 'GET',
+      url: "http://hackatonpresidencial.herokuapp.com/booths/" + $id,
+      contentType: "application/json",
+      dataType: 'jsonp',
+      crossDomain: true,
+      success: function(res) {
+        console.log(res);
+        $("#q-1").val(res[0]);
+        $("#q-1").val(res[1]);
+        $("#q-1").val(res[2]);
+        $("#q-1").val(res[3]);
+        $("#q-1").val(res[5]);
+        return $("#q-success").fadeIn('fast');
+      },
+      error: function() {
+        return $("#q-error").fadeIn('fast');
+      },
+      complete: function() {}
+    });
   });
 
   $(document).on('click', "a[href^='/']:not([data-bypass])", function(e) {
