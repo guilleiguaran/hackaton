@@ -112,6 +112,8 @@ class window.AppRouter extends Backbone.Router
       $('#main-section').fadeIn()
       NProgress.done()
 
+    twitterFetcher.fetch('463040140948946944', 'presidentate_social', 10, true, true, false);
+    
   candidate: (id) ->
     html = kb.renderTemplate("candidate-template-#{id}", kb.viewModel())
     $('#main-section').fadeOut 'fast', ->

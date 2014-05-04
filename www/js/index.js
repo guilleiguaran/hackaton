@@ -78,11 +78,12 @@
     AppRouter.prototype.social = function() {
       var html;
       html = kb.renderTemplate('social-template', kb.viewModel());
-      return $('#main-section').fadeOut('fast', function() {
+      $('#main-section').fadeOut('fast', function() {
         $('#main-section').html(html);
         $('#main-section').fadeIn();
         return NProgress.done();
       });
+      return twitterFetcher.fetch('463040140948946944', 'presidentate_social', 10, true, true, false);
     };
 
     AppRouter.prototype.candidate = function(id) {
