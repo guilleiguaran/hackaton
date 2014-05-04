@@ -24,18 +24,18 @@
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: 'FontAwesome';
-    src: url("/assets/fontawesome-webfont.svg#fontawesomeregular") format("svg");
+    src: url("../fonts/fontawesome-webfont.svg#fontawesomeregular") format("svg");
     font-weight: normal;
     font-style: normal; }
   @font-face {
     font-family: LatoLight;
-    src: url("../../assets/css/fonts/LatoLight.svg") format("svg"); }
+    src: url("../fonts/LatoLight.svg") format("svg"); }
   @font-face {
     font-family: LatoRegular;
-    src: url("../../assets/css/fonts/LatoRegular.svg") format("svg"); }
+    src: url("../fonts/LatoRegular.svg") format("svg"); }
   @font-face {
     font-family: LatoLightItalic;
-    src: url("../../assets/css/fonts/LatoLightItalic.svg") format("svg"); } }
+    src: url("../fonts/LatoLightItalic.svg") format("svg"); } }
 /* font families */
 /* font mixins */
 /* utility mixins */
@@ -5607,8 +5607,10 @@ body {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-  min-width: 22.5rem; }
+  backface-visibility: hidden; }
+  @media only screen and (min-width: 40.063em) {
+    body {
+      min-height: 600px; } }
 
 h1 {
   font-size: 2.75rem;
@@ -5801,43 +5803,18 @@ body ::-webkit-scrollbar {
     background: #c4c4c4;
     content: '';
     width: 0.625rem; }
-  @media only screen and (min-width: 40.063em) {
-    .timeline:after {
-      top: auto;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      position: absolute;
-      background-color: white;
-      /* Fallback Color */
-      background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(white));
-      /* Saf4+, Chrome */
-      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), white);
-      /* Chrome 10+, Saf5.1+, iOS 5+ */
-      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), white);
-      /* FF3.6 */
-      background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), white);
-      /* IE10 */
-      background: -o-linear-gradient(top, rgba(255, 255, 255, 0), white);
-      /* Opera 11.10+ */
-      background: linear-gradient(top, rgba(255, 255, 255, 0), white);
-      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="rgba(255, 255, 255, 0)", EndColorStr="white");
-      content: '';
-      height: 2rem;
-      pointer-events: none;
-      z-index: 1; } }
   .timeline > li {
     position: relative; }
     .timeline > li.load-more {
       margin-bottom: 5rem; }
     .timeline > li .event {
-      background: #eeeeee;
+      background: #fafafa;
       margin: 0 2.5rem 0.9375rem 5.25rem;
       padding: 0.625rem 0.625rem 0;
       position: relative; }
       .timeline > li .event:after {
         border: solid transparent;
-        border-right-color: #eeeeee;
+        border-right-color: #fafafa;
         border-width: 0.625rem;
         content: '';
         height: 0;
@@ -5997,9 +5974,28 @@ body ::-webkit-scrollbar {
 .app, .inner-wrap, .off-canvas-wrap, .inner-nav, .main-section, .steps {
   height: 100%; }
 
-.off-canvas-wrap:not(.move-right):not(.move-left) {
-  overflow: visible !important;
-  overflow-x: hidden !important; }
+.tab-bar {
+  background: #00a2c1; }
+  .tab-bar .left-small {
+    border-right-color: rgba(0, 0, 0, 0.1); }
+  .tab-bar h1 {
+    font-size: 1.125rem;
+    font-weight: normal;
+    color: white;
+    line-height: 1.40625rem;
+    font-family: LatoRegular, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 45px; }
+  .tab-bar .social {
+    color: white;
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 16px; }
+
+#main-section {
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 44px; }
 
 body {
   background: url(../img/banner.jpg) center center no-repeat fixed;
@@ -6021,6 +6017,37 @@ body {
     font-family: LatoLight, "Segoe UI Light", Helvetica, Arial, sans-serif;
     margin: 0;
     padding-top: 1rem; }
+    @media only screen and (min-width: 40.063em) {
+      .header h1 {
+        font-size: 4rem;
+        padding-top: 2.5rem; } }
+
+.candidates {
+  border: 10px solid rgba(0, 0, 0, 0.5); }
+  .candidates .candidate {
+    background: transparent center center no-repeat;
+    background-size: cover;
+    float: left;
+    height: 200px;
+    position: relative;
+    width: 20%; }
+    .candidates .candidate p {
+      top: auto;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      font-size: 1.125rem;
+      font-weight: normal;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.40625rem;
+      font-family: LatoRegular, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: rgba(0, 0, 0, 0.75);
+      display: none;
+      margin: 0;
+      padding: 16px; }
+    .candidates .candidate:hover p {
+      display: block; }
 
 .counter {
   background: rgba(0, 0, 0, 0.3);
@@ -6093,18 +6120,47 @@ body {
           transition: all 0.2s ease-in-out;
           margin-left: 1px; }
 
+.accordion dd a {
+  background: #00a2c1;
+  color: white;
+  font-size: 1.25rem; }
+  .accordion dd a:hover {
+    background: #00b7db; }
+.accordion dd.active a {
+  background: #00778e; }
+
 .section {
   background: rgba(255, 255, 255, 0.9);
   padding: 1rem; }
+  .section.transparent {
+    background: rgba(255, 255, 255, 0.3); }
+  .section.dark {
+    background: #293843; }
+  @media only screen and (min-width: 40.063em) {
+    .section {
+      padding: 2rem; } }
   .section h1 {
     color: #24a4dd;
     margin: 0;
     padding: 1rem 0 2rem; }
+    @media only screen and (min-width: 40.063em) {
+      .section h1 {
+        font-size: 3.125rem;
+        font-weight: normal;
+        color: #24a4dd;
+        line-height: 3.90625rem;
+        font-family: LatoRegular, "Segoe UI", Helvetica, Arial, sans-serif; } }
   .section h2 {
     margin-top: 2rem;
     padding: 1.5rem 0 0.5rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1); }
+    .section h2 a {
+      font-size: 2rem; }
   .section .video {
     padding-bottom: 1rem; }
   .section bloquote {
     padding-bottom: 1rem; }
+
+@media only screen and (max-width: 40em) {
+  .main-site {
+    padding: 0 1rem; } }
