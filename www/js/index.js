@@ -13,6 +13,7 @@
     onDeviceReady: function() {
       window.router = new AppRouter();
       Backbone.history.start();
+      $.support.cors = true;
     },
     receivedEvent: function(id) {}
   };
@@ -77,11 +78,12 @@
     AppRouter.prototype.social = function() {
       var html;
       html = kb.renderTemplate('social-template', kb.viewModel());
-      return $('#main-section').fadeOut('fast', function() {
+      $('#main-section').fadeOut('fast', function() {
         $('#main-section').html(html);
         $('#main-section').fadeIn();
         return NProgress.done();
       });
+      return twitterFetcher.fetch('463040140948946944', 'presidentate_social', 10, true, true, false);
     };
 
     AppRouter.prototype.candidate = function(id) {
@@ -95,7 +97,10 @@
     };
 
     AppRouter.prototype.before = function() {
-      return NProgress.start();
+      NProgress.start();
+      return $("*").animate({
+        scrollTop: 0
+      }, 0);
     };
 
     AppRouter.prototype.after = function() {
@@ -112,6 +117,33 @@
 
   $(document).on('click', "[data-bypass]", function(e) {
     return false;
+  });
+
+  $(document).on('click', "#place-query", function(e) {
+    var $id;
+    $id = $('#user-id').val();
+    $("#q-error").hide();
+    $("#q-success").hide();
+    return $.ajax({
+      type: 'GET',
+      url: "http://hackatonpresidencial.herokuapp.com/booths/" + $id + ".jsonp?callback=onSucess",
+      contentType: "application/json",
+      dataType: 'jsonp',
+      crossDomain: true,
+      success: function(res) {
+        window.res = res;
+        $("#q-1").text(res["Departamento"]);
+        $("#q-2").text(res["Municipio"]);
+        $("#q-3").text(res["Puesto"]);
+        $("#q-4").text(res["Dirección Puesto"]);
+        $("#q-5").text(res["Fecha de inscripción"]);
+        return $("#q-success").fadeIn('fast');
+      },
+      error: function() {
+        return $("#q-error").fadeIn('fast');
+      },
+      complete: function() {}
+    });
   });
 
   $(document).on('click', "a[href^='/']:not([data-bypass])", function(e) {

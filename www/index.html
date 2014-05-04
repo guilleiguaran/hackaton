@@ -70,6 +70,7 @@
 		<script type="text/javascript" src="js/quotes.min.js"></script>
 		<script type="text/javascript" src="js/owl.carousel.js"></script>
 		<script type="text/javascript" src="js/nprogress.js"></script>
+		<script type="text/javascript" src="js/twitter.js"></script>
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript">
@@ -156,36 +157,36 @@
 						<div class="cbp-qtcontent">
 							<!-- <img src="images/1.jpg" alt="img01" /> -->
 							<blockquote>
-							  <p>Cuanto menos se tiene más importante es tu voto. Los votos construyen hospitales. Con la indiferencia no se construye nada</p>
-							  <footer>Alfredo Pérez Rubalcaba</footer>
+								<p>Cuanto menos se tiene más importante es tu voto. Los votos construyen hospitales. Con la indiferencia no se construye nada</p>
+								<footer>Alfredo Pérez Rubalcaba</footer>
 							</blockquote>
 						</div>
 						<div class="cbp-qtcontent">
 							<!-- <img src="images/2.jpg" alt="img02" /> -->
 							<blockquote>
-							  <p>El voto es el instrumento más poderoso jamás concebido por el hombre para derribar la injusticia y destruir las terribles paredes que encarcelan a hombres por ser diferentes de otros hombres</p>
-							  <footer>Lyndon B. Johnson</footer>
+								<p>El voto es el instrumento más poderoso jamás concebido por el hombre para derribar la injusticia y destruir las terribles paredes que encarcelan a hombres por ser diferentes de otros hombres</p>
+								<footer>Lyndon B. Johnson</footer>
 							</blockquote>
 						</div>
 						<div class="cbp-qtcontent">
 							<!-- <img src="images/3.jpg" alt="img03" /> -->
 							<blockquote>
-							  <p>Un hombre sin un voto es un hombre sin protección</p>
-							  <footer>Lyndon B. Johnson</footer>
+								<p>Un hombre sin un voto es un hombre sin protección</p>
+								<footer>Lyndon B. Johnson</footer>
 							</blockquote>
 						</div>
 						<div class="cbp-qtcontent">
 							<!-- <img src="images/4.jpg" alt="img04" /> -->
 							<blockquote>
-							  <p>El futuro no está escrito, porque sólo el pueblo puede escribirlo</p>
-							  <footer>Adolfo Suárez</footer>
+								<p>El futuro no está escrito, porque sólo el pueblo puede escribirlo</p>
+								<footer>Adolfo Suárez</footer>
 							</blockquote>
 						</div>
 						<div class="cbp-qtcontent">
 							<!-- <img src="images/4.jpg" alt="img04" /> -->
 							<blockquote>
-							  <p>Las elecciones, a veces, son la venganza del ciudadano. La papeleta es un puñal de papel</p>
-							  <footer>David Lloyd George</footer>
+								<p>Las elecciones, a veces, son la venganza del ciudadano. La papeleta es un puñal de papel</p>
+								<footer>David Lloyd George</footer>
 							</blockquote>
 						</div>
 					</div>
@@ -200,17 +201,47 @@
 					<div class="video">
 						<iframe width="560" height="315" src="http://www.youtube.com/embed/Fwf-6Ly7N9A?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 					</div>
-
 					<h2>Pasos para votar</h2>
 					<div class="steps clearfix rows">
 						<div class="small-12 medium-4 columns">
-							<a class="step step-1"><h3><span class="number">1</span> Puesto de votación</h3></a>
+							<a class="step step-1"><h3><span class="number">1</span> Busca tu puesto</h3></a>
+							<p>Puedes consultar tu lugar de votación aquí mismo.</p>
+							<label>Intruduce cédula (no la almacenaremos).</label>
+							<input class="edit" type="text" id="user-id" />
+							<h3 id="q-error" class="error" style="display: none">Ocurrió un error</h3>
+							<a class="button success" id="place-query">Consultar</a>
+							<table id="q-success" style="display: none">
+								<tbody>
+									<tr>
+										<td><b>Departamento</b></td>
+										<td id="q-1"></td>
+									</tr>
+									<tr>
+										<td><b>Municipio</b></td>
+										<td id="q-2"></td>
+									</tr>
+									<tr>
+										<td><b>Puesto</b></td>
+										<td id="q-3"></td>
+									</tr>
+									<tr>
+										<td><b>Direccion</b></td>
+										<td id="q-4"></td>
+									</tr>
+									<tr>
+										<td><b>Mesa</b></td>
+										<td id="q-5"></td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 						<div class="small-12 medium-4 columns">
 							<a class="step step-2"><h3><span class="number">2</span> Acude al lugar</h3></a>
+							<p>¡El 25 de mayo todos los colombianos tenemos una cita con la democracia, recuerda llegar temprano y no olvides tu cedula!</p>
 						</div>
 						<div class="small-12 medium-4 columns">
-							<a class="step step-3"><h3><span class="number">3</span> Vota</h3></a>
+							<a class="step step-3"><h3><span class="number">3</span> Vota libremente</h3></a>
+							<p>Solo tú eres le dueño de tu elección, escoge al candidato que pienses que es mejor para tí y para el país. Recuerda tachar solo un candidato en el tarjetón.</p>
 						</div>
 					</div>
 
@@ -258,6 +289,12 @@
 								<p>Oscar Iván Zuluaga<br /><span class="party">Centro Democrático</span></p>
 							</div>
 						</a>
+						<a href="/candidate/6" class="small-12 medium-4 columns">
+							<div class="candidate">
+								<div class="illustration" style="background-image: url(img/white.jpg)"></div>
+								<p>Voto en blanco<br /><span class="party"></span></p>
+							</div>
+						</a>
 						<div style="clear:both"></div>
 					</div>
 					<h2>Ahora que ya conoces los 3 pasos te invitamos a ver qué esta pasando en las <a href="/social">redes sociales</a></h2>
@@ -267,37 +304,17 @@
 			<!-- social -->
 			<div id="social-template">
 				<div class="section dark">
-					<h1>Ultimas interacciones</h1>
-					<h3>@appelecciones</h3>
-					<ul class="timeline slim">
-						<li>
-							<div class="icon">
-								<i class="fa fa-comment"></i>
-							</div>
-							<div class="event activity">
-								<p><a class="username" href="#">sds</a></p>
-								<p>sadaa</p>
-								<p class="date bottom">03 de may 23:42</p>
-							</div>
-						</li><li>
-							<div class="icon">
-								<i class="fa fa-comment"></i>
-							</div>
-							<div class="event activity">
-								<p><a class="username" href="#">Nestor</a></p>
-								<p>SApodijakdasas das djasidadiasj dasdiasd dasdaksd as</p>
-								<p class="date bottom">22 de abr 02:21</p>
-							</div>
-						</li>
-					</ul>
+					<h1>Últimas interacciones</h1>
+					<h3>@presidentate</h3>
+					<div id="presidentate_social"></div>
 				</div>
 			</div>
 
 			<!-- CLARA LOPEZ -->
 			<div id="candidate-template-1">
-
 				<div class="section for-candidate">
 					<h1>Clara López</h1>
+					<p class="slogan">La opción es Clara!</p>
 					<div class="video">
 						<iframe width="560" height="315" src="http://www.youtube.com/embed/NXtz0eiKA3c?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 					</div>
@@ -311,18 +328,33 @@
 						<dd>
 							<a href="#panel2b" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspPropuestas</a>
 							<div id="panel2b" class="content">
-
+								<ul>
+									<li>Cambiar le modelo economico por uno mas justo y equitativo</li>
+									<li>Generar empleo promoviendo la industria nacional</li>
+									<li>Rediseñar el sistema de salud para que el dinero llegue a los pacientes y no se lo queden las EPS</li>
+									<li>Renegociar los Tratados de Libre Comercio</li>
+									<li>Cambio Real y Pacifico, reconciliacion nacional y construccion de Paz</li>
+									<li>Los ciudadanos mas pobres recibiran gratis el minimo de agua y luz necesarios para vivir</li>
+									<li>Construir mas y mejores carreteres para que el pais sea competitivo</li>
+									<li>Garantizar educacion publica gratuita y de calidad para todos y todas</li>
+								</ul>
 							</div>
 						</dd>
 						<dd>
 							<a href="#panel3b" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspEquipo de campaña</a>
 							<div id="panel3b" class="content">
-								
+								<ul class="team">
+									<li><img src="img/aliados/lopez/vice.jpg" /> Aída Avella (fórmula vicepresidencial)</li>
+									<li><img src="img/aliados/lopez/gaviria.jpg" /> Carlos Gaviria Díaz</li>
+									<li><img src="img/aliados/lopez/robledo.jpg" /> Jorge Enrique Robledo</li>
+									<li><img src="img/aliados/lopez/cepeda.jpg" /> Iván Cepeda</li>
+								</ul>
 							</div>
 						</dd>
 					</dl>
+			
 					<h2>@ClaraLopezObre</h2>
-					<img src="img/lopez.jpg" />
+					
 					<ul class="timeline slim">
 						<li>
 							<div class="icon">
@@ -352,6 +384,7 @@
 
 				<div class="section for-candidate">
 					<h1>Marta Lucía Ramírez</h1>
+					<p class="slogan">No nos van a callar</p>
 					<div class="video">
 						<iframe width="560" height="315" src="http://www.youtube.com/embed/4wblntbvv5Y?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 					</div>
@@ -365,18 +398,29 @@
 						<dd>
 							<a href="#panel2b" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspPropuestas</a>
 							<div id="panel2b" class="content">
-								
+								<ul>
+									<li>Crearemos un Bloque de Búsqueda Anticorrupción, persiguiendo a los corruptos por toda Colombia.</li>
+									<li>Recuperaremos la seguridad democrática en el campo y en las carreteras de Colombia.</li>
+									<li>Incluiremos en nuestro pacto a estudiantes, gobierno, padres de familia, partidos políticos y maestros.</li>
+									<li>Desarrollaremos un sistema de salud incluyente que le sirva a cada colombiano.</li>
+									<li>Diseñaremos una política agrícola de Estado a largo plazo la cual servirá como hoja de ruta y marco legal para el desarrollo del sector rural.</li>
+									<li>Trabajaremos para que los procesos civiles, laborales y penales funcionen con agilidad y se haga verdadera justicia.</li>
+									<li>- Cuidaremos nuestros bosques y parques naturales, eliminando la influencia del narcotráfico que genera tala y minería ilegal.</li>
+								</ul>
 							</div>
 						</dd>
 						<dd>
 							<a href="#panel3b" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspEquipo de campaña</a>
 							<div id="panel3b" class="content">
-								
+								<ul class="team">
+									<li><img src="img/aliados/ramirez/vice.jpg" /> Camilo Gómez (fórmula vicepresidencial)</li>
+									<li><img src="img/aliados/ramirez/yepes.jpg" /> Ómar Yepes Alzate</li>
+								</ul>
 							</div>
 						</dd>
 					</dl>
 					<h2>@mluciaramirez</h2>
-					<img src="img/ramirez.jpg" />
+					
 					<ul class="timeline slim">
 						<li>
 							<div class="icon">
@@ -404,7 +448,8 @@
 			<!-- ERRIQUE PENALOSA -->
 			<div id="candidate-template-2">
 				<div class="section for-candidate">
-					<h1>Enrrique Peñalosa</h1>
+					<h1>Enrique Peñalosa</h1>
+					<p class="slogan">Con Peñalosa podemos!</p>
 					<div class="video">
 						<iframe width="560" height="315" src="http://www.youtube.com/embed/A73CbYHqL78?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 					</div>
@@ -418,16 +463,24 @@
 						<dd>
 							<a href="#panel2b" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspPropuestas</a>
 							<div id="panel2b" class="content">
-								
+								<ul>
+									<li>Proponemos la creación de un Ministerio de Bienestar Rural que se encargue de la provisión de bienes públicos al campesinado.</li>
+									<li>Es necesario pasar del esquema de subsidios a un esquema de incentivos que generen valor agregado.</li>
+									<li>Es una de nuestras prioridades la inclusión social, esencial en un país con una desigualdad oprobiosa, vergonzosa, inaceptable, que se constituye en  el más  grave y profundo problema nacional.</li>
+									<li>Los conflictos ambientales que más nos están afectando son la creciente deforestación, la destrucción y la contaminación de las fuentes hídricas.</li>
+									<li>Vemos con enorme preocupación los resultados que empiezan a producir los tratados de libre comercio que como religión han firmado los gobiernos recientes.</li>
+									<li>Ponerle fin al conflicto armado que atraviesa  nuestro país desde hace 64 años.</li>
+									<li>Es necesario robustecer la participación ciudadana en las decisiones de los asuntos públicos, implementar la planeación y la presupuestación participativa.</li>
+								</ul>
 							</div>
 						</dd>
 						<dd>
 							<a href="#panel3b" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspEquipo de campaña</a>
 							<div id="panel3b" class="content">
 								<ul class="team">
-									<li><img src="img/penaloza.jpg" /> Nombre Apellido</li>
-									<li><img src="img/penaloza.jpg" /> Nombre Apellido</li>
-									<li><img src="img/penaloza.jpg" /> Nombre Apellido</li>
+									<li><img src="img/aliados/penalosa/vice.png" /> Isabel Segovia (fórmula vicepresidencial)</li>
+									<li><img src="img/aliados/penalosa/lopez.jpg" /> Claudia López</li>
+									<li><img src="img/aliados/penalosa/romero.jpg" /> Camilo Romero Galeano</li>
 								</ul>
 							</div>
 						</dd>
@@ -460,9 +513,9 @@
 
 			<!-- JUAN MANUEL SANTOS -->
 			<div id="candidate-template-4">
-
 				<div class="section for-candidate">
 					<h1>Juan Manuel Santos</h1>
+					<p class="slogan">Hemos hecho mucho, falta mucho por hacer </p>
 					<div class="video">
 						<iframe width="560" height="315" src="http://www.youtube.com/embed/YixRz6IL1JQ?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 					</div>
@@ -476,18 +529,33 @@
 						<dd>
 							<a href="#panel2b" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspPropuestas</a>
 							<div id="panel2b" class="content">
-								
+								<ul>
+									<li>Logramos la gratuidad escolar universal de grado 0 a 11, hoy 8,9 millones de niños van al colegio gratis. En el segundo tiempo vamos a trabajar por mejorar la calidad.</li>
+									<li>- En 2010 prometimos crear 2,4 millones de empleos y vamos a cumplir. En los próximos cuatro años vamos a crear 2,5 millones más.</li>
+									<li>Invertimos $2,1 billones para mejorar escuelas por todo el país. En nuestro segundo gobierno vamos a construir o mejorar 4.500 escuelas en zonas rurales para que tengan internet y sean espacios de convivencia.</li>
+									<li>Hemos beneficiado a 330.000 jóvenes con becas-crédito del ICETEX que tienen un  interés del 0%. ¡En el próximo gobierno vamos a triplicarlas!</li>
+									<li>El SENA formó a 7 millones de jóvenes en los últimos 4 años. El fortalecimiento de esta institución será uno de los puntos clave de nuestro gobierno, ampliando los cursos del nivel técnico y tecnólogo.</li>
+									<li>Creamos el programa De Cero a Siempre que cubre a 1,2 millones de niños y niñas con atención de calidad a la primera infancia. Vamos a doblarlo para llegar a 2,4 millones en 2018.</li>
+									<li>Creamos el Servicio Nacional de Empleo para que los colombianos puedan conseguir empleo sin palanca. Vamos a llevarlo a 400 puntos de atención adicionales en 32 departamentos del país.</li>
+									<li>Colombia se ha ganado la fama de país emprendedor. Para ello, el Gobierno creó &#39;Innpulsa&#39;, institución para apoyar y promover el crecimiento empresarial extraordinario, a través de la cual se entregarán más recursos para los emprendedores.</li>
+									<li>El  empleo  rural  fue  una  de  las  grandes  apuestas  en  estos  4  años.  En  el  próximo  cuatrienio vamos a aumentar la inversión en el campo para dinamizar el empleo rural con obras públicas en vías terciarias y distritos de riego.</li>
+								</ul>
 							</div>
 						</dd>
 						<dd>
 							<a href="#panel3b" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspEquipo de campaña</a>
 							<div id="panel3b" class="content">
-								
+								<ul class="team">
+									<li><img src="img/aliados/santos/vice.jpg" /> Germán Vargas (fórmula vicepresidencial)</li>
+									<li><img src="img/aliados/santos/galan.jpg" /> Carlos Fernando Galán</li>
+									<li><img src="img/aliados/santos/plazas.jpg" /> Cristina Plazas Michelsen</li>
+									<li><img src="img/aliados/santos/prieto.jpg" /> Roberto Prieto Uribe</li>
+								</ul>
 							</div>
 						</dd>
 					</dl>
 					<h2>@JuanManSantos</h2>
-					<img src="img/santos.jpg" />
+					
 					<ul class="timeline slim">
 						<li>
 							<div class="icon">
@@ -514,9 +582,9 @@
 
 			<!-- OSCAR IVAN ZULUAGA -->
 			<div id="candidate-template-5">
-
 				<div class="section for-candidate">
 					<h1>Oscar Iván Zuluaga</h1>
+					<p class="slogan">Por una Colombia distinta</p>
 					<div class="video">
 						<iframe width="560" height="315" src="http://www.youtube.com/embed/NsJirgvH6hg?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 					</div>
@@ -530,18 +598,30 @@
 						<dd>
 							<a href="#panel2b" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspPropuestas</a>
 							<div id="panel2b" class="content">
-								
+								<ul>
+									<li>Colombia necesita recuperar la política de seguridad democrática porque todos tenemos derecho a ser libres, a recorrer nuestro país sin miedo y a trabajar honradamente sin padecer la extorsión</li>
+									<li>Pondremos en marcha un esquema de incentivos y de ascensos para la Rama Judicial que premie la capacidad académica, la agilidad en la resolución de los pleitos y la transparencia.</li>
+									<li>Vamos a lograr aumentar la tasa de crecimiento de la economía al 6% anual, pero lo haremos de tal manera que el progreso llegue a todos los rincones del territorio. Trabajaremos sin descanso para volver a tener una tasa de inversión de 2 dígitos al año.</li>
+									<li>- Pondremos en marcha el programa Construyendo Caminos de Oportunidades para asignarle $1.600 millones de pesos en 4 años a cada uno de los 1102 municipios del país.</li>
+									<li>- El sector industrial con vocación exportadora tendrá especial protección contra la competencia internacional desleal a través de medidas anti-dumping y apoyo para la actualización tecnológica.</li>
+									<li>- Lideramos un gobierno comprometido con las políticas sociales más ambiciosas y urgentes. Así forjaremos una Colombia de verdadera igualdad de oportunidades.</li>
+									<li>- Pondremos en marcha la jornada única ordinaria en todos los colegios públicos, para que todos los niños sin excepción estudien de 8 a.m. a 4 p.m.. El Estado garantizará la alimentación para los 8.5 millones de niños en el sistema de educación pública.</li>
+									<li>- Haremos de la calidad y oportunidad de la atención al paciente el centro del sistema de salud. En vez de más reformas legales y de crear colosos burocráticos ineficientes, aplicaremos soluciones sencillas pero eficaces para mejorar sustancialmente la calidad de la salud.</li>
+								</ul>
 							</div>
 						</dd>
 						<dd>
 							<a href="#panel3b" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspEquipo de campaña</a>
 							<div id="panel3b" class="content">
-								
+								<ul class="team">
+									<li><img src="img/aliados/zuluaga/vice.png" /> Carlos Holmes (fórmula vicepresidencial)</li>
+									<li><img src="img/aliados/zuluaga/uribe.jpg" /> Álvaro Uribe Vélez</li>
+								</ul>
 							</div>
 						</dd>
 					</dl>
 					<h2>@OIZuluaga</h2>
-					<img src="img/zuluaga.jpg" />
+					
 					<ul class="timeline slim">
 						<li>
 							<div class="icon">
@@ -563,6 +643,18 @@
 							</div>
 						</li>
 					</ul>
+				</div>
+			</div>
+
+			<!-- Voto en blanco -->
+			<div id="candidate-template-6">
+				<div class="section for-candidate">
+					<h1>Voto en Blanco</h1>
+					<p class="slogan">Una opción más</p>
+					<div class="video">
+						<iframe width="560" height="315" src="http://www.youtube.com/embed/7X7wFhAf01g?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<p></p>					
 				</div>
 			</div>
 
@@ -606,6 +698,9 @@
 							<a href="/step3" class="step step-3"><h3><span class="number">3</span> ¿Por quién votar?</h3></a>
 						</div>
 					</div>
+					<footer>
+						<p>#Presidentate App 2014.</p>
+					</footer>
 				</div>
 			</div>
 		</div>

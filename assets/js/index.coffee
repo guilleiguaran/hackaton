@@ -43,6 +43,8 @@ window.app =
     # Start backbone history
     Backbone.history.start()
 
+    $.support.cors = true
+
     # Bind window title to backbone router
     # ko.applyBindings(new NavbarViewModel(window.navigation), $('#navbar')[0])
     # ko.applyBindings(new DashMenuViewModel(window.navigation), $('#dash-menu')[0])
@@ -110,6 +112,8 @@ class window.AppRouter extends Backbone.Router
       $('#main-section').fadeIn()
       NProgress.done()
 
+    twitterFetcher.fetch('463040140948946944', 'presidentate_social', 10, true, true, false);
+    
   candidate: (id) ->
     html = kb.renderTemplate("candidate-template-#{id}", kb.viewModel())
     $('#main-section').fadeOut 'fast', ->
@@ -119,6 +123,7 @@ class window.AppRouter extends Backbone.Router
 
   before: ->
     NProgress.start()
+    $("*").animate({ scrollTop: 0 }, 0);
 
   after: ->
     $(document).foundation()
@@ -129,6 +134,29 @@ $ ->
 
 $(document).on 'click', "[data-bypass]", (e) ->
   return false
+
+$(document).on 'click', "#place-query", (e) ->
+  $id = $('#user-id').val()
+  $("#q-error").hide()
+  $("#q-success").hide()
+  $.ajax({  
+    type: 'GET'
+    url: "http://hackatonpresidencial.herokuapp.com/booths/#{$id}.jsonp?callback=onSucess" 
+    contentType: "application/json"
+    dataType: 'jsonp'  
+    crossDomain: true
+    success: (res) ->
+      window.res = res
+      $("#q-1").text(res["Departamento"])
+      $("#q-2").text(res["Municipio"])
+      $("#q-3").text(res["Puesto"])
+      $("#q-4").text(res["Dirección Puesto"])
+      $("#q-5").text(res["Fecha de inscripción"])
+      $("#q-success").fadeIn('fast')
+    error: ->
+      $("#q-error").fadeIn('fast')
+    complete: ->
+  });
 
 $(document).on 'click', "a[href^='/']:not([data-bypass])", (e) ->
     href = $(@).attr('href')
