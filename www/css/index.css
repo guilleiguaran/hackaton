@@ -6145,6 +6145,17 @@ body {
           transition: all 0.2s ease-in-out;
           margin-left: 1px; }
 
+ul.team {
+  list-style: none; }
+  ul.team li {
+    line-height: 48px;
+    margin-bottom: 8px; }
+    ul.team li img {
+      width: 48px;
+      height: 48px;
+      float: left;
+      margin-right: 16px; }
+
 .accordion dd a {
   background: #00a2c1;
   color: white;
