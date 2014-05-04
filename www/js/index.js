@@ -114,6 +114,14 @@
     return false;
   });
 
+  $(document).on('click', "#place-query", function(e) {
+    var $id;
+    $id = $('#user-id').val();
+    return $.get("http://hackatonpresidencial.herokuapp.com/booths/" + $id, function(data) {
+      return console.log(data);
+    });
+  });
+
   $(document).on('click', "a[href^='/']:not([data-bypass])", function(e) {
     var href, protocol;
     href = $(this).attr('href');

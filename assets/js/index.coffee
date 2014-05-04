@@ -130,6 +130,11 @@ $ ->
 $(document).on 'click', "[data-bypass]", (e) ->
   return false
 
+$(document).on 'click', "#place-query", (e) ->
+  $id = $('#user-id').val()
+  $.get "http://hackatonpresidencial.herokuapp.com/booths/#{$id}", (data) ->
+    console.log data
+
 $(document).on 'click', "a[href^='/']:not([data-bypass])", (e) ->
     href = $(@).attr('href')
     protocol = "#{@protocol}//"
