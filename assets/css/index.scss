@@ -232,7 +232,7 @@ ul.team {
 }
 
 
-#presidentate_social {
+#presidentate_social, #candidate-social-1, #candidate-social-2, #candidate-social-3, #candidate-social-4, #candidate-social-5 {
 	h2 {
 	  clear:both;
 	}
@@ -266,12 +266,18 @@ ul.team {
 
 	.user {
 	  width:25%;
+	  @media #{$medium-up} {
+	  	width:10%;
+	  }
 	}
 
 	.tweet {
 	  width:75%;
 	  padding-left: 8px;
 	  margin-top: 0 !important;
+	  @media #{$medium-up} {
+	  	width:90%;
+	  }
 	}
 
 	.timePosted {
