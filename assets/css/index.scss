@@ -4,13 +4,36 @@
 	height: 100%;
 }
 
+.tab-bar {
+	background: $primary;
+	.left-small {
+		border-right-color: black(0.1);
+	}
+	h1 {
+		@include sans(18, normal, white);
+		line-height: 45px;
+	}
+	.social {
+		color: white;
+		display: block;
+		height: 45px;
+		line-height: 45px;
+		padding: 0 16px;
+	}
+}
+
+#main-section {
+	height: 100%;
+	overflow-y: auto;
+	padding-bottom: 44px;
+}
+
 body {
 	background: url(../img/banner.jpg) center center no-repeat fixed;
 	background-size: cover;
 }
 
 .header {
-	
 	height: rc(160);
 	position: relative;
 	h1 {
@@ -18,6 +41,33 @@ body {
 		@include sans(50, 300, white);
 		margin: 0;
 		padding-top: rc(16);
+		@media #{$medium-up} {
+			font-size: rc(64);
+			padding-top: rc(40);
+		}
+	}
+}
+
+.candidates {
+	border: 10px solid black(0.5);
+	.candidate {
+		background: transparent center center no-repeat;
+		background-size: cover;
+		float: left;
+		height: 200px;
+		position: relative;
+		width: 20%;
+		p {
+			@include absolute-expanded(auto);
+			@include sans(18, normal, white(0.8));
+			background: black(0.75);
+			display: none;
+			margin: 0;
+			padding: 16px;
+		}
+		&:hover {
+			p { display: block; }
+		}
 	}
 }
 
@@ -55,3 +105,44 @@ body {
 		}
 	}
 }
+
+.section {
+	background: white(0.9);
+	padding: rc(16);
+	&.transparent {
+		background: white(0.3);
+	}
+	&.dark {
+		background: $dblue;
+	}
+	@media #{$medium-up} {
+		padding: rc(32);
+	}
+	h1 {
+		color: $blue;
+		margin: 0;
+		padding: rc(16 0 32);
+		@media #{$medium-up} {
+			@include sans(50, normal, $blue);
+		}
+	}
+	h2 {
+		margin-top: rc(32);
+		padding: rc(24 0 8);
+		border-top: 1px solid black(0.1);
+	}
+	.video {
+		padding-bottom: rc(16);
+	}
+	bloquote {
+		padding-bottom: rc(16);	
+	}
+}
+
+.main-site {
+	@media #{$small-only} {
+		padding: rc(0 16);
+	}
+}
+
+

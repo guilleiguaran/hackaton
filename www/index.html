@@ -5,7 +5,11 @@
 		<meta name="format-detection" content="telephone=no" />
 		<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+		<link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
+		<link rel="stylesheet" type="text/css" href="css/nprogress.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 		<title>Hello World</title>
 	</head>
 	<body>
@@ -20,10 +24,10 @@
 									<a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
 								</section>
 								<section class="middle tab-bar-section">
-									<h1 class="title"></h1>
+									<a href="/"><h1 class="title">Elecciones Presidenciales</h1></a>
 								</section>
-								<section class="right-small">
-									<a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>
+								<section class="right">
+									<a href="/social" class="social"><i class="fa fa-twitter"></i></a>
 								</section>
 							</nav>
 
@@ -36,18 +40,9 @@
 								</ul>
 							</aside>
 
-							<!-- navbar right -->
-							<aside class="right-off-canvas-menu">
-								<ul class="off-canvas-list">
-									<li><label>Users</label></li>
-									<li><a href="#">Hari Seldon</a></li>
-									<li><a href="#">...</a></li>
-								</ul>
-							</aside>
-
 							<!-- conetent -->
-							<section class="main-section" id="main-section">
-								
+							<section class="main-section">
+								<div class="row" id="main-section"></div>
 							</section>
 
 							<!-- exit menu -->
@@ -65,6 +60,9 @@
 		<script type="text/javascript" src="js/knockback.min.js"></script>
 		<script type="text/javascript" src="js/foundation.min.js"></script>
 		<script type="text/javascript" src="js/foundation/foundation.offcanvas.js"></script>
+		<script type="text/javascript" src="js/jquery.fitvids.js"></script>
+		<script type="text/javascript" src="js/owl.carousel.js"></script>
+		<script type="text/javascript" src="js/nprogress.js"></script>
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 		<script type="text/javascript">
@@ -72,42 +70,110 @@
 			$(document).foundation();
 		</script>
 
-		<!-- step 1 -->
-		<script type="text/html" id="step1-template">
-			<h1>¿Por qué Votar?</h1>
-		</script>
-
-		<!-- step 2 -->
-		<script type="text/html" id="step2-template">
-			<h1>¿Cómo votar?</h1>
-		</script>
-
-		<!-- step 3 -->
-		<script type="text/html" id="step3-template">
-			<h1>¿Por quién votar?</h1>
-		</script>
-
-		<!-- home -->
-		<script type="text/html" id="home-template">
-			<div class="row">
-				<div class="header">
-					<h1>Elecciones Presidenciales</h1>
-				</div>
-				<div class="counter small-12 columns clearfix">
-					<h2>Faltan 20 días</h2>
-				</div>
-				<div class="steps clearfix">
-					<div class="small-12 large-4 columns">
-						<a href="/step1" class="step step-1"><h2><span class="number">1</span> ¿Por qué votar?</h2></a>
+		<div id="templates" style="display: none !important;">
+			<!-- step 1 -->
+			<div id="step1-template">
+				<div class="section">
+					<h1>¿Por qué debo salir a votar?</h1>
+					<div class="video">
+						<iframe width="560" height="315" src="http://www.youtube.com/embed/RjO11d1fP_o?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 					</div>
-					<div class="small-12 large-4 columns">
-						<a href="/step2" class="step step-2"><h2><span class="number">2</span> ¿Cómo votar?</h2></a>
-					</div>
-					<div class="small-12 large-4 columns">
-						<a href="/step3" class="step step-3"><h2><span class="number">3</span> ¿Por quién votar?</h2></a>
+					<blockquote>Cuanto menos se tiene más importante es tu voto. Los votos construyen hospitales. Con la indiferencia no se construye nada.<cite>Alfredo Pérez Rubalcaba</cite></blockquote>
+				</div>
+			</div>
+
+			<!-- step 2 -->
+			<div id="step2-template">
+				<div class="section">
+					<h1>¿Cómo ejercer el derecho al voto?</h1>
+					<div class="video">
+						<iframe width="560" height="315" src="http://www.youtube.com/embed/Fwf-6Ly7N9A?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
-		</script>
+
+			<!-- step 3 -->
+			<div id="step3-template">
+				<div class="section">
+					<h1>¿Por quién debo votar?</h1>
+					<div class="video">
+						<iframe width="560" height="315" src="http://www.youtube.com/embed/4v9Td-KobvM?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<h2>Guía de candidatos</h2>
+					<p class="text-justify">A continuación presentamos, sin ningún orden en particular, los actuales candidatos a la presidencia de la nación. Puedes hacer clic en cada uno de ellos y obtendrás información detallada que te será de mucha utilidad al momento de escoger. Recuerda: El destino de tu país está en tus manos !Es tu deber tomar una buena desición!</p>
+				</div>
+			</div>
+
+			<!-- social -->
+			<div id="social-template">
+				<div class="section dark">
+					<h1>Ultimas interacciones</h1>
+					<h3>@appelecciones</h3>
+					<ul class="timeline slim">
+						<li>
+							<div class="icon">
+								<i class="fa fa-comment"></i>
+							</div>
+							<div class="event activity">
+								<p><a class="username" href="#">sds</a></p>
+								<p>sadaa</p>
+								<p class="date bottom">03 de may 23:42</p>
+							</div>
+						</li><li>
+							<div class="icon">
+								<i class="fa fa-comment"></i>
+							</div>
+							<div class="event activity">
+								<p><a class="username" href="#">Nestor</a></p>
+								<p>SApodijakdasas das djasidadiasj dasdiasd dasdaksd as</p>
+								<p class="date bottom">22 de abr 02:21</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- home -->
+			<div id="home-template">
+				<div class="main-site">
+					<div class="header">
+						<h1>Elecciones Presidenciales</h1>
+					</div>
+					<div class="candidates show-for-medium-up">
+						<div class="candidate" style="background-image: url(img/lopez.jpg)">
+							<p>Clara Lopez</p>
+						</div>
+						<div class="candidate" style="background-image: url(img/penaloza.jpg)">
+							<p>Enrquique Peñaloza</p>
+						</div>
+						<div class="candidate" style="background-image: url(img/ramirez.jpg)">
+							<p>Marta Lucía Ramirez</p>
+						</div>
+						<div class="candidate" style="background-image: url(img/santos.jpg)">
+							<p>Juan Manuel Santos</p>
+						</div>
+						<div class="candidate" style="background-image: url(img/zuluaga.jpg)">
+							<p>Oscar Iván Zuluaga</p>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+					<div style="clear:both"></div>
+					<div class="counter">
+						<h2><i class="fa fa-calendar"></i> Faltan 20 días</h2>
+					</div>
+					<div class="steps clearfix rows">
+						<div class="small-12 medium-4 columns">
+							<a href="/step1" class="step step-1"><h2><span class="number">1</span> ¿Por qué votar?</h2></a>
+						</div>
+						<div class="small-12 medium-4 columns">
+							<a href="/step2" class="step step-2"><h2><span class="number">2</span> ¿Cómo votar?</h2></a>
+						</div>
+						<div class="small-12 medium-4 columns">
+							<a href="/step3" class="step step-3"><h2><span class="number">3</span> ¿Por quién votar?</h2></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

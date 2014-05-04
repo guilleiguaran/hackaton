@@ -12,29 +12,19 @@
 		content: '';
 		width: rc(10);
 	}
-	@media #{$medium-up} {
-		&:after {
-			@include absolute-expanded(auto);
-			@include gradient(white(0), white);
-			content: '';
-			height: rc(32);
-			pointer-events: none;
-			z-index: 1;
-		}
-	}
 	& > li {
 		position: relative;
 		&.load-more {
 			margin-bottom: rc(80);
 		}
 		.event {
-			background: $gray-e;
+			background: $gray-fa;
 			margin: rc(0 40 15 84);
 			padding: rc(10 10 0);
 			position: relative;
 			&:after {
 				border: solid transparent;
-				border-right-color: $gray-e;
+				border-right-color: $gray-fa;
 				border-width: rc(10);
 				content: '';
 				height: 0;

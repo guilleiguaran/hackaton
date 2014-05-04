@@ -56,37 +56,57 @@ window.app =
 # Backbone router
 class window.AppRouter extends Backbone.Router
   routes:
-    ''       : 'home'
-    'step1'  : 'step1'
-    'step2'  : 'step2'
-    'step3'  : 'step3'
+    ''        : 'home'
+    'step1'   : 'step1'
+    'step2'   : 'step2'
+    'step3'   : 'step3'
+    'social'  : 'social'
  
   home: ->
     html = kb.renderTemplate('home-template', kb.viewModel())
     $('#main-section').html(html)
+    # $('#carousel').owlCarousel({
+    #   items: 1
+    #   itemsDesktop: false
+    #   itemsDesktopSmall: false
+    #   itemsTablet: false
+    #   itemsMobile: false
+    #   pagination: true
+    #   addClassActive: true
+    # })
     #navigation.display 'Inicio', 'home'
-    #NProgress.done()
+    NProgress.done()
 
   step1: ->
     html = kb.renderTemplate('step1-template', kb.viewModel())
     $('#main-section').fadeOut 'fast', ->
       $('#main-section').html(html)
       $('#main-section').fadeIn()
+      NProgress.done()
 
   step2: ->
     html = kb.renderTemplate('step2-template', kb.viewModel())
     $('#main-section').fadeOut 'fast', ->
       $('#main-section').html(html)
       $('#main-section').fadeIn()
+      NProgress.done()
 
   step3: ->
     html = kb.renderTemplate('step3-template', kb.viewModel())
     $('#main-section').fadeOut 'fast', ->
       $('#main-section').html(html)
       $('#main-section').fadeIn()
+      NProgress.done()
+
+  social: ->
+    html = kb.renderTemplate('social-template', kb.viewModel())
+    $('#main-section').fadeOut 'fast', ->
+      $('#main-section').html(html)
+      $('#main-section').fadeIn()
+      NProgress.done()
 
   before: ->
-    #NProgress.start()
+    NProgress.start()
 
   after: ->
     $(document).foundation()
@@ -94,7 +114,7 @@ class window.AppRouter extends Backbone.Router
 
 # Application entry point
 $ ->
-  
+  $('.video').fitVids();
 
 
 $(document).on 'click', "a[href^='/']:not([data-bypass])", (e) ->

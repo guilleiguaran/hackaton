@@ -83,7 +83,10 @@ $screen-lg-max: 1599px;
 body {
 	@include user-select(none);
 	@include backface-visibility(hidden);
-	min-width: rc(360);
+	//min-width: rc(360);
+	@media #{$medium-up} {
+		min-height: 600px;
+	}
 }
 
 h1 { 

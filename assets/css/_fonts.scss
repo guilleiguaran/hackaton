@@ -17,21 +17,21 @@
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
 	@font-face {
 		font-family: 'FontAwesome';
-		src: url('/assets/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+		src: url('../fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
 		font-weight: normal;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: LatoLight;
-		src: url('../../assets/css/fonts/LatoLight.svg') format('svg');
+		src: url('../fonts/LatoLight.svg') format('svg');
 	}
 	@font-face {
 		font-family: LatoRegular;
-		src: url('../../assets/css/fonts/LatoRegular.svg') format('svg');
+		src: url('../fonts/LatoRegular.svg') format('svg');
 	}
 	@font-face {
 		font-family: LatoLightItalic;
-		src: url('../../assets/css/fonts/LatoLightItalic.svg') format('svg');
+		src: url('../fonts/LatoLightItalic.svg') format('svg');
 	}
 }
 

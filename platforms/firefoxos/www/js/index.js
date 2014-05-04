@@ -74,7 +74,9 @@
 
   })(Backbone.Router);
 
-  $(function() {});
+  $(function() {
+    return $('.video').fitVids();
+  });
 
   $(document).on('click', "a[href^='/']:not([data-bypass])", function(e) {
     var href, protocol;

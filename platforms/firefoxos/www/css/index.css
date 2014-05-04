@@ -5773,7 +5773,7 @@ body ::-webkit-scrollbar {
   height: 10px; }
 
 ::-webkit-scrollbar-track-piece {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #cccccc;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   float: left; }
 
@@ -5997,6 +5997,10 @@ body ::-webkit-scrollbar {
 .app, .inner-wrap, .off-canvas-wrap, .inner-nav, .main-section, .steps {
   height: 100%; }
 
+.off-canvas-wrap:not(.move-right):not(.move-left) {
+  overflow: visible !important;
+  overflow-x: hidden !important; }
+
 body {
   background: url(../img/banner.jpg) center center no-repeat fixed;
   background-size: cover; }
@@ -6088,3 +6092,19 @@ body {
           -ms-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
           margin-left: 1px; }
+
+.section {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem; }
+  .section h1 {
+    color: #24a4dd;
+    margin: 0;
+    padding: 1rem 0 2rem; }
+  .section h2 {
+    margin-top: 2rem;
+    padding: 1.5rem 0 0.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  .section .video {
+    padding-bottom: 1rem; }
+  .section bloquote {
+    padding-bottom: 1rem; }
