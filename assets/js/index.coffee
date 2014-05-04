@@ -112,6 +112,8 @@ class window.AppRouter extends Backbone.Router
       $('#main-section').fadeIn()
       NProgress.done()
 
+    twitterFetcher.fetch('463040140948946944', 'presidentate_social', 10, true, true, false);
+    
   candidate: (id) ->
     html = kb.renderTemplate("candidate-template-#{id}", kb.viewModel())
     $('#main-section').fadeOut 'fast', ->
@@ -137,7 +139,6 @@ $(document).on 'click', "#place-query", (e) ->
   $id = $('#user-id').val()
   $("#q-error").hide()
   $("#q-success").hide()
-  http://localhost:9292/booths/1140821145.jsonp?callback=func
   $.ajax({  
     type: 'GET'
     url: "http://hackatonpresidencial.herokuapp.com/booths/#{$id}.jsonp?callback=onSucess" 
