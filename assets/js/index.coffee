@@ -56,12 +56,12 @@ window.app =
 # Backbone router
 class window.AppRouter extends Backbone.Router
   routes:
-    ''          : 'home'
-    'step1'     : 'step1'
-    'step2'     : 'step2'
-    'step3'     : 'step3'
-    'social'    : 'social'
-    'candidate' : 'candidate'
+    ''              : 'home'
+    'step1'         : 'step1'
+    'step2'         : 'step2'
+    'step3'         : 'step3'
+    'social'        : 'social'
+    'candidate/:id' : 'candidate'
  
   home: ->
     html = kb.renderTemplate('home-template', kb.viewModel())
@@ -110,8 +110,8 @@ class window.AppRouter extends Backbone.Router
       $('#main-section').fadeIn()
       NProgress.done()
 
-  candidate: ->
-    html = kb.renderTemplate('candidate-template', kb.viewModel())
+  candidate: (id) ->
+    html = kb.renderTemplate("candidate-template-#{id}", kb.viewModel())
     $('#main-section').fadeOut 'fast', ->
       $('#main-section').html(html)
       $('#main-section').fadeIn()

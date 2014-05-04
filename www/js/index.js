@@ -30,7 +30,7 @@
       'step2': 'step2',
       'step3': 'step3',
       'social': 'social',
-      'candidate': 'candidate'
+      'candidate/:id': 'candidate'
     };
 
     AppRouter.prototype.home = function() {
@@ -84,9 +84,9 @@
       });
     };
 
-    AppRouter.prototype.candidate = function() {
+    AppRouter.prototype.candidate = function(id) {
       var html;
-      html = kb.renderTemplate('candidate-template', kb.viewModel());
+      html = kb.renderTemplate("candidate-template-" + id, kb.viewModel());
       return $('#main-section').fadeOut('fast', function() {
         $('#main-section').html(html);
         $('#main-section').fadeIn();

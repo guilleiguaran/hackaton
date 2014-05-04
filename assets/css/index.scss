@@ -119,7 +119,7 @@ body {
 		&.step-1 { background: $yellow; }
 		&.step-2 { background: $blue; }
 		&.step-3 { background: $red; }
-		h2 {
+		h3 {
 			@include sans(24, normal, white);
 			padding-left: rc(80);
 			text-align: left;
