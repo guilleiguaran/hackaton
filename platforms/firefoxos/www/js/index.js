@@ -28,13 +28,16 @@
       '': 'home',
       'step1': 'step1',
       'step2': 'step2',
-      'step3': 'step3'
+      'step3': 'step3',
+      'social': 'social',
+      'candidate': 'candidate'
     };
 
     AppRouter.prototype.home = function() {
       var html;
       html = kb.renderTemplate('home-template', kb.viewModel());
-      return $('#main-section').html(html);
+      $('#main-section').html(html);
+      return NProgress.done();
     };
 
     AppRouter.prototype.step1 = function() {
@@ -42,7 +45,9 @@
       html = kb.renderTemplate('step1-template', kb.viewModel());
       return $('#main-section').fadeOut('fast', function() {
         $('#main-section').html(html);
-        return $('#main-section').fadeIn();
+        $('#main-section').fadeIn();
+        NProgress.done();
+        return $('#cbp-qtrotator').cbpQTRotator();
       });
     };
 
@@ -51,7 +56,8 @@
       html = kb.renderTemplate('step2-template', kb.viewModel());
       return $('#main-section').fadeOut('fast', function() {
         $('#main-section').html(html);
-        return $('#main-section').fadeIn();
+        $('#main-section').fadeIn();
+        return NProgress.done();
       });
     };
 
@@ -60,11 +66,34 @@
       html = kb.renderTemplate('step3-template', kb.viewModel());
       return $('#main-section').fadeOut('fast', function() {
         $('#main-section').html(html);
-        return $('#main-section').fadeIn();
+        $('#main-section').fadeIn();
+        return NProgress.done();
       });
     };
 
-    AppRouter.prototype.before = function() {};
+    AppRouter.prototype.social = function() {
+      var html;
+      html = kb.renderTemplate('social-template', kb.viewModel());
+      return $('#main-section').fadeOut('fast', function() {
+        $('#main-section').html(html);
+        $('#main-section').fadeIn();
+        return NProgress.done();
+      });
+    };
+
+    AppRouter.prototype.candidate = function() {
+      var html;
+      html = kb.renderTemplate('candidate-template', kb.viewModel());
+      return $('#main-section').fadeOut('fast', function() {
+        $('#main-section').html(html);
+        $('#main-section').fadeIn();
+        return NProgress.done();
+      });
+    };
+
+    AppRouter.prototype.before = function() {
+      return NProgress.start();
+    };
 
     AppRouter.prototype.after = function() {
       return $(document).foundation();
@@ -76,6 +105,10 @@
 
   $(function() {
     return $('.video').fitVids();
+  });
+
+  $(document).on('click', "[data-bypass]", function(e) {
+    return false;
   });
 
   $(document).on('click', "a[href^='/']:not([data-bypass])", function(e) {
