@@ -156,36 +156,36 @@
 						<div class="cbp-qtcontent">
 							<!-- <img src="images/1.jpg" alt="img01" /> -->
 							<blockquote>
-							  <p>Cuanto menos se tiene más importante es tu voto. Los votos construyen hospitales. Con la indiferencia no se construye nada</p>
-							  <footer>Alfredo Pérez Rubalcaba</footer>
+								<p>Cuanto menos se tiene más importante es tu voto. Los votos construyen hospitales. Con la indiferencia no se construye nada</p>
+								<footer>Alfredo Pérez Rubalcaba</footer>
 							</blockquote>
 						</div>
 						<div class="cbp-qtcontent">
 							<!-- <img src="images/2.jpg" alt="img02" /> -->
 							<blockquote>
-							  <p>El voto es el instrumento más poderoso jamás concebido por el hombre para derribar la injusticia y destruir las terribles paredes que encarcelan a hombres por ser diferentes de otros hombres</p>
-							  <footer>Lyndon B. Johnson</footer>
+								<p>El voto es el instrumento más poderoso jamás concebido por el hombre para derribar la injusticia y destruir las terribles paredes que encarcelan a hombres por ser diferentes de otros hombres</p>
+								<footer>Lyndon B. Johnson</footer>
 							</blockquote>
 						</div>
 						<div class="cbp-qtcontent">
 							<!-- <img src="images/3.jpg" alt="img03" /> -->
 							<blockquote>
-							  <p>Un hombre sin un voto es un hombre sin protección</p>
-							  <footer>Lyndon B. Johnson</footer>
+								<p>Un hombre sin un voto es un hombre sin protección</p>
+								<footer>Lyndon B. Johnson</footer>
 							</blockquote>
 						</div>
 						<div class="cbp-qtcontent">
 							<!-- <img src="images/4.jpg" alt="img04" /> -->
 							<blockquote>
-							  <p>El futuro no está escrito, porque sólo el pueblo puede escribirlo</p>
-							  <footer>Adolfo Suárez</footer>
+								<p>El futuro no está escrito, porque sólo el pueblo puede escribirlo</p>
+								<footer>Adolfo Suárez</footer>
 							</blockquote>
 						</div>
 						<div class="cbp-qtcontent">
 							<!-- <img src="images/4.jpg" alt="img04" /> -->
 							<blockquote>
-							  <p>Las elecciones, a veces, son la venganza del ciudadano. La papeleta es un puñal de papel</p>
-							  <footer>David Lloyd George</footer>
+								<p>Las elecciones, a veces, son la venganza del ciudadano. La papeleta es un puñal de papel</p>
+								<footer>David Lloyd George</footer>
 							</blockquote>
 						</div>
 					</div>
@@ -207,8 +207,32 @@
 							<p>Puedes consultar tu lugar de votación o si eres jurado aquí mismo.</p>
 							<label>Intruduce cédula (no la almacenaremos).</label>
 							<input class="edit" type="text" id="user-id" />
+							<h3 id="q-error" class="error" style="display: none">Ocurrió un error</h3>
 							<a class="button success" id="place-query">Consultar</a>
-							<p id="query-answer"></p>
+							<table id="q-success" style="display: none">
+								<tbody>
+									<tr>
+										<td><b>Departamento</b></td>
+										<td id="q-1"></td>
+									</tr>
+									<tr>
+										<td><b>Municipio</b></td>
+										<td id="q-2"></td>
+									</tr>
+									<tr>
+										<td><b>Puesto</b></td>
+										<td id="q-3"></td>
+									</tr>
+									<tr>
+										<td><b>Dirección</b></td>
+										<td id="q-4"></td>
+									</tr>
+									<tr>
+										<td><b>Mesa</b></td>
+										<td id="q-5"></td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 						<div class="small-12 medium-4 columns">
 							<a class="step step-2"><h3><span class="number">2</span> Acude al lugar</h3></a>

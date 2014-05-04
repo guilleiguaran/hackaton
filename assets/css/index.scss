@@ -132,8 +132,16 @@ body {
 		}
 	}
 	p {
-		padding-top: 16px;
+		padding-top: rc(16);
 		padding-bottom: 0;
+	}
+	h3.error {
+		margin: rc(-10 0 16);
+		color: $red;
+		font-size: rc(18);
+	}
+	a.button {
+		margin-bottom: rc(16);
 	}
 }
 

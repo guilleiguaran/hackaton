@@ -43,6 +43,8 @@ window.app =
     # Start backbone history
     Backbone.history.start()
 
+    $.support.cors = true
+
     # Bind window title to backbone router
     # ko.applyBindings(new NavbarViewModel(window.navigation), $('#navbar')[0])
     # ko.applyBindings(new DashMenuViewModel(window.navigation), $('#dash-menu')[0])
@@ -119,6 +121,7 @@ class window.AppRouter extends Backbone.Router
 
   before: ->
     NProgress.start()
+    $("*").animate({ scrollTop: 0 }, 0);
 
   after: ->
     $(document).foundation()
@@ -132,8 +135,27 @@ $(document).on 'click', "[data-bypass]", (e) ->
 
 $(document).on 'click', "#place-query", (e) ->
   $id = $('#user-id').val()
-  $.get "http://hackatonpresidencial.herokuapp.com/booths/#{$id}", (data) ->
-    console.log data
+  $("#q-error").hide()
+  $("#q-success").hide()
+  http://localhost:9292/booths/1140821145.jsonp?callback=func
+  $.ajax({  
+    type: 'GET'
+    url: "http://hackatonpresidencial.herokuapp.com/booths/#{$id}.jsonp?callback=onSucess" 
+    contentType: "application/json"
+    dataType: 'jsonp'  
+    crossDomain: true
+    success: (res) ->
+      console.log res
+      $("#q-1").val(res[0])
+      $("#q-1").val(res[1])
+      $("#q-1").val(res[2])
+      $("#q-1").val(res[3])
+      $("#q-1").val(res[5])
+      $("#q-success").fadeIn('fast')
+    error: ->
+      $("#q-error").fadeIn('fast')
+    complete: ->
+  });
 
 $(document).on 'click', "a[href^='/']:not([data-bypass])", (e) ->
     href = $(@).attr('href')
