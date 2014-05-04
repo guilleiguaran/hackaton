@@ -76,6 +76,9 @@ class window.AppRouter extends Backbone.Router
     #   addClassActive: true
     # })
     #navigation.display 'Inicio', 'home'
+    a = new Date()
+    b = new Date('2014-05-25')
+    $('#days-left').html(Math.max(0, b.getDate() - a.getDate() + 1))
     NProgress.done()
 
   step1: ->

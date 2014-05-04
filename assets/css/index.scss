@@ -71,6 +71,33 @@ body {
 	}
 }
 
+.candidates-list {
+	.candidate {
+		background: $primary;
+		height: 80px;
+		position: relative;
+		margin-bottom: rc(8);
+		.illustration {
+			height: 80px;
+			width: 20%;
+			float: left;
+			background: transparent center center no-repeat;
+			background-size: cover;
+		}
+		p {
+			@include sans(18, normal, white(0.95));
+			height: 80px;
+			width: 80%;
+			float: right;
+			margin: 0;
+			padding: 16px;
+			.party {
+				color: white(0.8);
+			}
+		}
+	}
+}
+
 .counter {
 	background: black(0.3);
 	padding: rc(12);
@@ -125,6 +152,7 @@ body {
 .section {
 	background: white(0.9);
 	padding: rc(16);
+	padding-bottom: rc(48);
 	&.transparent {
 		background: white(0.3);
 	}

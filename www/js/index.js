@@ -34,9 +34,12 @@
     };
 
     AppRouter.prototype.home = function() {
-      var html;
+      var a, b, html;
       html = kb.renderTemplate('home-template', kb.viewModel());
       $('#main-section').html(html);
+      a = new Date();
+      b = new Date('2014-05-25');
+      $('#days-left').html(Math.max(0, b.getDate() - a.getDate() + 1));
       return NProgress.done();
     };
 
