@@ -137,7 +137,6 @@ $(document).on 'click', "#place-query", (e) ->
   $id = $('#user-id').val()
   $("#q-error").hide()
   $("#q-success").hide()
-  http://localhost:9292/booths/1140821145.jsonp?callback=func
   $.ajax({  
     type: 'GET'
     url: "http://hackatonpresidencial.herokuapp.com/booths/#{$id}.jsonp?callback=onSucess" 
@@ -145,12 +144,12 @@ $(document).on 'click', "#place-query", (e) ->
     dataType: 'jsonp'  
     crossDomain: true
     success: (res) ->
-      console.log res
-      $("#q-1").val(res[0])
-      $("#q-1").val(res[1])
-      $("#q-1").val(res[2])
-      $("#q-1").val(res[3])
-      $("#q-1").val(res[5])
+      window.res = res
+      $("#q-1").text(res["Departamento"])
+      $("#q-2").text(res["Municipio"])
+      $("#q-3").text(res["Puesto"])
+      $("#q-4").text(res["Dirección Puesto"])
+      $("#q-5").text(res["Fecha de inscripción"])
       $("#q-success").fadeIn('fast')
     error: ->
       $("#q-error").fadeIn('fast')

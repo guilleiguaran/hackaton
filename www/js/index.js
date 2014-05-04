@@ -125,17 +125,17 @@
     $("#q-success").hide();
     return $.ajax({
       type: 'GET',
-      url: "http://hackatonpresidencial.herokuapp.com/booths/" + $id,
+      url: "http://hackatonpresidencial.herokuapp.com/booths/" + $id + ".jsonp?callback=onSucess",
       contentType: "application/json",
       dataType: 'jsonp',
       crossDomain: true,
       success: function(res) {
-        console.log(res);
-        $("#q-1").val(res[0]);
-        $("#q-1").val(res[1]);
-        $("#q-1").val(res[2]);
-        $("#q-1").val(res[3]);
-        $("#q-1").val(res[5]);
+        window.res = res;
+        $("#q-1").text(res["Departamento"]);
+        $("#q-2").text(res["Municipio"]);
+        $("#q-3").text(res["Puesto"]);
+        $("#q-4").text(res["Dirección Puesto"]);
+        $("#q-5").text(res["Fecha de inscripción"]);
         return $("#q-success").fadeIn('fast');
       },
       error: function() {
