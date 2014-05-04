@@ -18,7 +18,6 @@
 #
 
 window.app =
-
   # Application Constructor
   initialize: ->
     @bindEvents()
@@ -37,10 +36,71 @@ window.app =
   # The scope of 'this' is the event. In order to call the 'receivedEvent'
   # function, we must explicity call 'app.receivedEvent(...);'
   onDeviceReady: ->
-    app.receivedEvent "deviceready"
+    # Create navigation models
+    window.router = new AppRouter()
+    # window.navigation = new Navigation()
+
+    # Start backbone history
+    Backbone.history.start()
+
+    # Bind window title to backbone router
+    # ko.applyBindings(new NavbarViewModel(window.navigation), $('#navbar')[0])
+    # ko.applyBindings(new DashMenuViewModel(window.navigation), $('#dash-menu')[0])
     return
 
   # Update DOM on a Received Event
   receivedEvent: (id) ->
 
     return
+
+# Backbone router
+class window.AppRouter extends Backbone.Router
+  routes:
+    ''       : 'home'
+    'step1'  : 'step1'
+    'step2'  : 'step2'
+    'step3'  : 'step3'
+ 
+  home: ->
+    html = kb.renderTemplate('home-template', kb.viewModel())
+    $('#main-section').html(html)
+    #navigation.display 'Inicio', 'home'
+    #NProgress.done()
+
+  step1: ->
+    html = kb.renderTemplate('step1-template', kb.viewModel())
+    $('#main-section').fadeOut 'fast', ->
+      $('#main-section').html(html)
+      $('#main-section').fadeIn()
+
+  step2: ->
+    html = kb.renderTemplate('step2-template', kb.viewModel())
+    $('#main-section').fadeOut 'fast', ->
+      $('#main-section').html(html)
+      $('#main-section').fadeIn()
+
+  step3: ->
+    html = kb.renderTemplate('step3-template', kb.viewModel())
+    $('#main-section').fadeOut 'fast', ->
+      $('#main-section').html(html)
+      $('#main-section').fadeIn()
+
+  before: ->
+    #NProgress.start()
+
+  after: ->
+    $(document).foundation()
+
+
+# Application entry point
+$ ->
+  
+
+
+$(document).on 'click', "a[href^='/']:not([data-bypass])", (e) ->
+    href = $(@).attr('href')
+    protocol = "#{@protocol}//"
+
+    if href.slice(protocol.length) isnt protocol
+      e.preventDefault()
+      router.navigate(href, true)

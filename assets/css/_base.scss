@@ -83,6 +83,7 @@ $screen-lg-max: 1599px;
 body {
 	@include user-select(none);
 	@include backface-visibility(hidden);
+	min-width: rc(360);
 }
 
 h1 { 
@@ -110,5 +111,8 @@ a {
 img { width: 100%; }
 
 
-
+@import 'components/_common_components';
 @import 'components/_timeline';
+
+
+
