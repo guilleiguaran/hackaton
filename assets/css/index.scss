@@ -133,6 +133,20 @@ body {
 	}
 }
 
+ul.team {
+	list-style: none;
+	li {
+		line-height: 48px;
+		margin-bottom: 8px;
+		img {
+			width: 48px;
+			height: 48px;
+			float: left;
+			margin-right: 16px;
+		}
+	}
+}
+
 .accordion {
 	dd {
 		a {
