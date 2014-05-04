@@ -191,7 +191,7 @@ ul.team {
 	h1 {
 		color: $blue;
 		margin: 0;
-		padding: rc(16 0 32);
+		padding: rc(16 0);
 		@media #{$medium-up} {
 			@include sans(50, normal, $blue);
 		}
@@ -210,12 +210,123 @@ ul.team {
 	bloquote {
 		padding-bottom: rc(16);	
 	}
+	p.slogan {
+		@include sans(32, normal, $gray-8);
+		text-align: center;
+	}
 }
 
 .main-site {
 	@media #{$small-only} {
 		padding: rc(0 16);
 	}
+	footer {
+		@include absolute-expanded(auto);
+		p {
+			@include sans(18, normal, white(0.85));
+			text-align: center;
+			margin-bottom: 0;
+			padding: 8px;
+		}
+	}
 }
+
+
+#presidentate_social {
+	h2 {
+	  clear:both;
+	}
+
+	p, a {
+	  font-size: 14px;
+	  margin:10px 0 0 0;
+	  color:#3d3d3d;
+	}
+
+	a, a:visited {
+	  color:#427fed;
+	}
+
+	a:hover {
+	  color:#82afff;
+	}
+
+	ul li {
+	  list-style:none;
+	  overflow:hidden;
+	  border:1px solid #dedede;
+	  margin:5px;
+	  padding:5px;
+	  background: white;
+	}
+
+	.user, .tweet, .timePosted {
+	  float:left;
+	}
+
+	.user {
+	  width:25%;
+	}
+
+	.tweet {
+	  width:75%;
+	  padding-left: 8px;
+	  margin-top: 0 !important;
+	}
+
+	.timePosted {
+	  width:15%;
+	}
+
+	.user {
+	  clear:left;
+	}
+
+	.user a {
+	 width: 100px;
+	}
+
+	.user span span {
+	  width:100px;
+	  display:block;
+	  margin-top:10px;
+	}
+
+	.user img, .user a > span {
+	  float:left;
+	}
+
+	.interact {
+	  display: none;
+	}
+
+	.interact a {
+	  margin-left:5px;
+	  float:left;
+	}
+
+	.user a > span {
+	  margin-left:10px;
+	}
+
+	#linkage {
+	  position:fixed;
+	  top:0px;
+	  right:0px;
+	  background-color:#3d3d3d;
+	  color:#ffffff;
+	  text-decoration:none;
+	  padding:5px;
+	  width:10%;
+	  font-family:arial;
+	}
+
+	.user a > span {
+		display: none;
+	}
+}
+
+
+
 
 

@@ -6188,7 +6188,7 @@ ul.team {
   .section h1 {
     color: #24a4dd;
     margin: 0;
-    padding: 1rem 0 2rem; }
+    padding: 1rem 0; }
     @media only screen and (min-width: 40.063em) {
       .section h1 {
         font-size: 3.125rem;
@@ -6206,7 +6206,86 @@ ul.team {
     padding-bottom: 1rem; }
   .section bloquote {
     padding-bottom: 1rem; }
+  .section p.slogan {
+    font-size: 2rem;
+    font-weight: normal;
+    color: #888888;
+    line-height: 2.5rem;
+    font-family: LatoRegular, "Segoe UI", Helvetica, Arial, sans-serif;
+    text-align: center; }
 
 @media only screen and (max-width: 40em) {
   .main-site {
     padding: 0 1rem; } }
+.main-site footer {
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute; }
+  .main-site footer p {
+    font-size: 1.125rem;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.40625rem;
+    font-family: LatoRegular, "Segoe UI", Helvetica, Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 8px; }
+
+#presidentate_social h2 {
+  clear: both; }
+#presidentate_social p, #presidentate_social a {
+  font-size: 14px;
+  margin: 10px 0 0 0;
+  color: #3d3d3d; }
+#presidentate_social a, #presidentate_social a:visited {
+  color: #427fed; }
+#presidentate_social a:hover {
+  color: #82afff; }
+#presidentate_social ul li {
+  list-style: none;
+  overflow: hidden;
+  border: 1px solid #dedede;
+  margin: 5px;
+  padding: 5px;
+  background: white; }
+#presidentate_social .user, #presidentate_social .tweet, #presidentate_social .timePosted {
+  float: left; }
+#presidentate_social .user {
+  width: 25%; }
+#presidentate_social .tweet {
+  width: 75%;
+  padding-left: 8px;
+  margin-top: 0 !important; }
+#presidentate_social .timePosted {
+  width: 15%; }
+#presidentate_social .user {
+  clear: left; }
+#presidentate_social .user a {
+  width: 100px; }
+#presidentate_social .user span span {
+  width: 100px;
+  display: block;
+  margin-top: 10px; }
+#presidentate_social .user img, #presidentate_social .user a > span {
+  float: left; }
+#presidentate_social .interact {
+  display: none; }
+#presidentate_social .interact a {
+  margin-left: 5px;
+  float: left; }
+#presidentate_social .user a > span {
+  margin-left: 10px; }
+#presidentate_social #linkage {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  background-color: #3d3d3d;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px;
+  width: 10%;
+  font-family: arial; }
+#presidentate_social .user a > span {
+  display: none; }
