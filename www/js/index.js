@@ -93,16 +93,16 @@
         $('#main-section').html(html);
         $('#main-section').fadeIn();
         NProgress.done();
-        if (id === 1) {
+        if (id === "1") {
           twitterFetcher.fetch('463050828471734272', 'candidate-social-1', 10, true, true, false);
         }
-        if (id === 2) {
+        if (id === "2") {
           twitterFetcher.fetch('463050431355043841', 'candidate-social-2', 10, true, true, false);
         }
-        if (id === 3) {
+        if (id === "3") {
           twitterFetcher.fetch('463050259950600192', 'candidate-social-3', 10, true, true, false);
         }
-        if (id === 4) {
+        if (id === "4") {
           twitterFetcher.fetch('463050579292348417', 'candidate-social-4', 10, true, true, false);
         }
         if (id === "5") {

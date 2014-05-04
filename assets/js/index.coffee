@@ -121,7 +121,7 @@ class window.AppRouter extends Backbone.Router
       $('#main-section').html(html)
       $('#main-section').fadeIn()
       NProgress.done()
-
+      
       if id is "1"
         # Fetch Lopez timeline
         twitterFetcher.fetch('463050828471734272', 'candidate-social-1', 10, true, true, false);
