@@ -92,7 +92,22 @@
       return $('#main-section').fadeOut('fast', function() {
         $('#main-section').html(html);
         $('#main-section').fadeIn();
-        return NProgress.done();
+        NProgress.done();
+        if (id === 1) {
+          twitterFetcher.fetch('463050828471734272', 'candidate-social-1', 10, true, true, false);
+        }
+        if (id === 2) {
+          twitterFetcher.fetch('463050431355043841', 'candidate-social-2', 10, true, true, false);
+        }
+        if (id === 3) {
+          twitterFetcher.fetch('463050259950600192', 'candidate-social-3', 10, true, true, false);
+        }
+        if (id === 4) {
+          twitterFetcher.fetch('463050579292348417', 'candidate-social-4', 10, true, true, false);
+        }
+        if (id === "5") {
+          return twitterFetcher.fetch('463039419788709888', 'candidate-social-5', 10, true, true, false);
+        }
       });
     };
 

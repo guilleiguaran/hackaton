@@ -112,14 +112,36 @@ class window.AppRouter extends Backbone.Router
       $('#main-section').fadeIn()
       NProgress.done()
 
+    # Fetch APP timeline
     twitterFetcher.fetch('463040140948946944', 'presidentate_social', 10, true, true, false);
-    
+
   candidate: (id) ->
     html = kb.renderTemplate("candidate-template-#{id}", kb.viewModel())
     $('#main-section').fadeOut 'fast', ->
       $('#main-section').html(html)
       $('#main-section').fadeIn()
       NProgress.done()
+
+      if id is "1"
+        # Fetch Lopez timeline
+        twitterFetcher.fetch('463050828471734272', 'candidate-social-1', 10, true, true, false);
+
+      if id is "2"
+        # Fetch Penalosa timeline
+        twitterFetcher.fetch('463050431355043841', 'candidate-social-2', 10, true, true, false);
+
+      if id is "3"
+        # Fetch Ramirez timeline
+        twitterFetcher.fetch('463050259950600192', 'candidate-social-3', 10, true, true, false);
+
+      if id is "4"
+        # Fetch Santos timeline
+        twitterFetcher.fetch('463050579292348417', 'candidate-social-4', 10, true, true, false);
+
+      if id is "5"
+      # Fetch Zuluaga timeline
+        twitterFetcher.fetch('463039419788709888', 'candidate-social-5', 10, true, true, false);
+
 
   before: ->
     NProgress.start()
