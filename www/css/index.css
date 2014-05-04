@@ -6233,51 +6233,57 @@ ul.team {
     margin-bottom: 0;
     padding: 8px; }
 
-#presidentate_social h2 {
+#presidentate_social h2, #candidate-social-1 h2, #candidate-social-2 h2, #candidate-social-3 h2, #candidate-social-4 h2, #candidate-social-5 h2 {
   clear: both; }
-#presidentate_social p, #presidentate_social a {
+#presidentate_social p, #presidentate_social a, #candidate-social-1 p, #candidate-social-1 a, #candidate-social-2 p, #candidate-social-2 a, #candidate-social-3 p, #candidate-social-3 a, #candidate-social-4 p, #candidate-social-4 a, #candidate-social-5 p, #candidate-social-5 a {
   font-size: 14px;
   margin: 10px 0 0 0;
   color: #3d3d3d; }
-#presidentate_social a, #presidentate_social a:visited {
+#presidentate_social a, #presidentate_social a:visited, #candidate-social-1 a, #candidate-social-1 a:visited, #candidate-social-2 a, #candidate-social-2 a:visited, #candidate-social-3 a, #candidate-social-3 a:visited, #candidate-social-4 a, #candidate-social-4 a:visited, #candidate-social-5 a, #candidate-social-5 a:visited {
   color: #427fed; }
-#presidentate_social a:hover {
+#presidentate_social a:hover, #candidate-social-1 a:hover, #candidate-social-2 a:hover, #candidate-social-3 a:hover, #candidate-social-4 a:hover, #candidate-social-5 a:hover {
   color: #82afff; }
-#presidentate_social ul li {
+#presidentate_social ul li, #candidate-social-1 ul li, #candidate-social-2 ul li, #candidate-social-3 ul li, #candidate-social-4 ul li, #candidate-social-5 ul li {
   list-style: none;
   overflow: hidden;
   border: 1px solid #dedede;
   margin: 5px;
   padding: 5px;
   background: white; }
-#presidentate_social .user, #presidentate_social .tweet, #presidentate_social .timePosted {
+#presidentate_social .user, #presidentate_social .tweet, #presidentate_social .timePosted, #candidate-social-1 .user, #candidate-social-1 .tweet, #candidate-social-1 .timePosted, #candidate-social-2 .user, #candidate-social-2 .tweet, #candidate-social-2 .timePosted, #candidate-social-3 .user, #candidate-social-3 .tweet, #candidate-social-3 .timePosted, #candidate-social-4 .user, #candidate-social-4 .tweet, #candidate-social-4 .timePosted, #candidate-social-5 .user, #candidate-social-5 .tweet, #candidate-social-5 .timePosted {
   float: left; }
-#presidentate_social .user {
+#presidentate_social .user, #candidate-social-1 .user, #candidate-social-2 .user, #candidate-social-3 .user, #candidate-social-4 .user, #candidate-social-5 .user {
   width: 25%; }
-#presidentate_social .tweet {
+  @media only screen and (min-width: 40.063em) {
+    #presidentate_social .user, #candidate-social-1 .user, #candidate-social-2 .user, #candidate-social-3 .user, #candidate-social-4 .user, #candidate-social-5 .user {
+      width: 10%; } }
+#presidentate_social .tweet, #candidate-social-1 .tweet, #candidate-social-2 .tweet, #candidate-social-3 .tweet, #candidate-social-4 .tweet, #candidate-social-5 .tweet {
   width: 75%;
   padding-left: 8px;
   margin-top: 0 !important; }
-#presidentate_social .timePosted {
+  @media only screen and (min-width: 40.063em) {
+    #presidentate_social .tweet, #candidate-social-1 .tweet, #candidate-social-2 .tweet, #candidate-social-3 .tweet, #candidate-social-4 .tweet, #candidate-social-5 .tweet {
+      width: 90%; } }
+#presidentate_social .timePosted, #candidate-social-1 .timePosted, #candidate-social-2 .timePosted, #candidate-social-3 .timePosted, #candidate-social-4 .timePosted, #candidate-social-5 .timePosted {
   width: 15%; }
-#presidentate_social .user {
+#presidentate_social .user, #candidate-social-1 .user, #candidate-social-2 .user, #candidate-social-3 .user, #candidate-social-4 .user, #candidate-social-5 .user {
   clear: left; }
-#presidentate_social .user a {
+#presidentate_social .user a, #candidate-social-1 .user a, #candidate-social-2 .user a, #candidate-social-3 .user a, #candidate-social-4 .user a, #candidate-social-5 .user a {
   width: 100px; }
-#presidentate_social .user span span {
+#presidentate_social .user span span, #candidate-social-1 .user span span, #candidate-social-2 .user span span, #candidate-social-3 .user span span, #candidate-social-4 .user span span, #candidate-social-5 .user span span {
   width: 100px;
   display: block;
   margin-top: 10px; }
-#presidentate_social .user img, #presidentate_social .user a > span {
+#presidentate_social .user img, #presidentate_social .user a > span, #candidate-social-1 .user img, #candidate-social-1 .user a > span, #candidate-social-2 .user img, #candidate-social-2 .user a > span, #candidate-social-3 .user img, #candidate-social-3 .user a > span, #candidate-social-4 .user img, #candidate-social-4 .user a > span, #candidate-social-5 .user img, #candidate-social-5 .user a > span {
   float: left; }
-#presidentate_social .interact {
+#presidentate_social .interact, #candidate-social-1 .interact, #candidate-social-2 .interact, #candidate-social-3 .interact, #candidate-social-4 .interact, #candidate-social-5 .interact {
   display: none; }
-#presidentate_social .interact a {
+#presidentate_social .interact a, #candidate-social-1 .interact a, #candidate-social-2 .interact a, #candidate-social-3 .interact a, #candidate-social-4 .interact a, #candidate-social-5 .interact a {
   margin-left: 5px;
   float: left; }
-#presidentate_social .user a > span {
+#presidentate_social .user a > span, #candidate-social-1 .user a > span, #candidate-social-2 .user a > span, #candidate-social-3 .user a > span, #candidate-social-4 .user a > span, #candidate-social-5 .user a > span {
   margin-left: 10px; }
-#presidentate_social #linkage {
+#presidentate_social #linkage, #candidate-social-1 #linkage, #candidate-social-2 #linkage, #candidate-social-3 #linkage, #candidate-social-4 #linkage, #candidate-social-5 #linkage {
   position: fixed;
   top: 0px;
   right: 0px;
@@ -6287,5 +6293,5 @@ ul.team {
   padding: 5px;
   width: 10%;
   font-family: arial; }
-#presidentate_social .user a > span {
+#presidentate_social .user a > span, #candidate-social-1 .user a > span, #candidate-social-2 .user a > span, #candidate-social-3 .user a > span, #candidate-social-4 .user a > span, #candidate-social-5 .user a > span {
   display: none; }
