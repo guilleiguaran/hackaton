@@ -151,7 +151,7 @@ $(document).on 'click', "#place-query", (e) ->
       $("#q-2").text(res["Municipio"])
       $("#q-3").text(res["Puesto"])
       $("#q-4").text(res["Dirección Puesto"])
-      $("#q-5").text(res["Fecha de inscripción"])
+      $("#q-5").text(res["Mesa"])
       $("#q-success").fadeIn('fast')
     error: ->
       $("#q-error").fadeIn('fast')

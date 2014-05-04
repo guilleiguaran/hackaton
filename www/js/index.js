@@ -136,7 +136,7 @@
         $("#q-2").text(res["Municipio"]);
         $("#q-3").text(res["Puesto"]);
         $("#q-4").text(res["Dirección Puesto"]);
-        $("#q-5").text(res["Fecha de inscripción"]);
+        $("#q-5").text(res["Mesa"]);
         return $("#q-success").fadeIn('fast');
       },
       error: function() {
