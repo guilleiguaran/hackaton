@@ -1,0 +1,115 @@
+/* frames */
+
+.dialog {
+	background: white;
+	padding: rc(16 32);
+	@media #{$medium-up} {
+		@include box-shadow(0 0 5px black(0.5));
+	}
+	h1 {
+		border-bottom: 1px solid $gray-c;
+		margin: rc(8 0 16);
+		padding-bottom: rc(16);
+	}
+	h2 { margin-bottom: rc(16); }
+	p { color: $light-text; }
+	.actions {
+		&.with-separator { 
+			border-top: 1px solid $gray-c; 
+			margin-top: rc(16);
+		}
+		.button {
+			display: block; 
+			margin: rc(16) auto 0; 
+		}
+	}
+	.frame-hints { 
+		border-top: 1px solid black(0.1);
+		margin-top: rc(16);
+		padding-top: rc(12);
+		p, a { 
+			font-size: rc(16);
+			margin-bottom: 0;
+			text-align: justify;
+		}
+	}
+}
+
+
+
+/* other elements */
+
+.buttons-radio, .buttons-check {
+	padding-left: 4px;
+	input {
+		display: none; 
+		margin: rc(10);
+	}
+	input + label {
+		background: black(0.05);
+		display:inline-block;
+		height: rc(41);
+		line-height: rc(41);		
+		margin: 0 0 0 rc(-4);
+		padding: 0 rc(16);
+	}
+	input:checked {
+		& + label { 
+			background: black(0.3);
+			color: white;
+		}
+	}
+}
+
+.attached-count {
+	@include circular-icon(rc(20), darken($red, 10%), darken($red, 10%), white, rc(12));
+	position: absolute;
+	bottom: rc(-4);
+	right: rc(-4);
+	z-index: 100;
+}
+
+#notification-area {
+	@include absolute-expanded(6px, 25%, 25%, auto);
+	position: fixed;
+	z-index: 410;
+	.alert-box {
+		background: $lprimary;
+		color: white;
+		margin-bottom: 6px;
+		&.error { background: $alert; }
+	}
+}
+
+.blank-info {
+	margin: 10% 0;
+	p {
+		@include sans(24px, normal, black(0.25));
+		text-align: center;
+	}
+}
+
+
+
+/* scrollbars */
+
+body ::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+ 
+::-webkit-scrollbar-track-piece {
+	background-color: $gray-c;
+	border-left: 1px solid black(0.1);
+	float: left;
+}
+  
+::-webkit-scrollbar-thumb {  
+	border-top: 1px solid white;  
+	background: black(0.1);  
+	border: none;
+}
+
+::-webkit-scrollbar-thumb:hover {  
+	background: $primary;  
+}

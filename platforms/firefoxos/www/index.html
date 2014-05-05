@@ -1,39 +1,343 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Config</h1>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+		<link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
+		<link rel="stylesheet" type="text/css" href="css/nprogress.css" />
+		<link rel="stylesheet" type="text/css" href="css/quotes.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<title>Presidentate</title>
+	</head>
+	<body>
+		<div class="app">
+			<div class="off-canvas-wrap" data-offcanvas>
+				<div class="inner-wrap">
+					<div class="off-canvas-wrap" data-offcanvas>
+						<div class="inner-wrap">
+							<!-- top bar -->
+							<nav class="tab-bar">
+								<section class="left-small">
+									<a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+								</section>
+								<section class="middle tab-bar-section">
+									<a href="/"><h1 class="title">Presidentate</h1></a>
+								</section>
+								<section class="right">
+									<a href="/social" class="social"><i class="fa fa-twitter"></i></a>
+								</section>
+							</nav>
+
+							<!-- navbar left -->
+							<aside class="left-off-canvas-menu">
+								<ul class="off-canvas-list">
+									<li><label>Menu</label></li>
+									<li><a href="/">Inicio</a></li>
+									<li><a href="/step1">¿Por qué votar?</a></li>
+									<li><a href="/step2">¿Cómo votar?</a></li>
+									<li><a href="/step3">¿Por quién votar?</a></li>
+									<li><a href="/social">Social</a></li>
+								</ul>
+							</aside>
+
+							<!-- conetent -->
+							<section class="main-section">
+								<div class="row" id="main-section"></div>
+							</section>
+
+							<!-- exit menu -->
+							<a class="exit-off-canvas"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/modernizr.custom.js"></script>
+		<script type="text/javascript" src="js/underscore.js"></script>
+		<script type="text/javascript" src="js/backbone.js"></script>
+		<script type="text/javascript" src="js/backbone.router.callbacks.js"></script>
+		<script type="text/javascript" src="js/knockout.js"></script>
+		<script type="text/javascript" src="js/knockback.min.js"></script>
+		<script type="text/javascript" src="js/foundation.min.js"></script>
+		<script type="text/javascript" src="js/foundation/foundation.offcanvas.js"></script>
+		<script type="text/javascript" src="js/foundation/foundation.accordion.js"></script>
+		<script type="text/javascript" src="js/jquery.fitvids.js"></script>
+		<script type="text/javascript" src="js/quotes.min.js"></script>
+		<script type="text/javascript" src="js/owl.carousel.js"></script>
+		<script type="text/javascript" src="js/nprogress.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+			app.initialize();
+			$(document).foundation({
+				accordion: {
+					// specify the class used for active (or open) accordion panels
+					active_class: 'active',
+					// allow multiple accordion panels to be active at the same time
+					multi_expand: false,
+					// allow accordion panels to be closed by clicking on their headers
+					// setting to false only closes accordion panels when another is opened
+					toggleable: true
+				}
+			});
+		</script>
+
+		<div id="templates" style="display: none !important;">
+			<!-- step 1 -->
+			<div id="step1-template">
+				<div class="section">
+					<h1>¿Por qué debo salir a votar?</h1>
+					<div class="video">
+						<iframe width="560" height="315" src="http://www.youtube.com/embed/RjO11d1fP_o?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<dl class="accordion" data-accordion="">
+						<dd>
+							<a href="#panel1a" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspVotar para exigir</a>
+							<div id="panel1a" class="content">
+								Si estas en edad de votar y decides no ejercer tu voto, no puedes quejarte ni exigir.
+							</div>
+						</dd>
+						<dd>
+							<a href="#panel2a" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspEs tu derecho</a>
+							<div id="panel2a" class="content">
+								Las mujeres, los jóvenes y grupos minoritarios lucharon por tener derecho a votar, hay países en donde aun no pueden votar. En México la edad para votar se bajo a 18 años en 19xx.
+							</div>
+						</dd>
+						<dd>
+							<a href="#panel3a" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspSer representado</a>
+							<div id="panel3a" class="content">
+								En los congresos te deben representar legisladores que representen tus causas.
+							</div>
+						</dd>
+						<dd>
+							<a href="#panel4a" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspMis recursos</a>
+							<div id="panel4a" class="content">
+								Para los programas de juventud, deporte, educación superior, generación de empleos, medio ambiente, investigación sobre VIH / SIDA, cánceré cualquiera que sea tu causa. Investiga la postura de cada uno de los candidatos. Que tus preocupaciones sean las de ellos.
+							</div>
+						</dd>
+						<dd>
+							<a href="#panel5a" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspCambiar el estereotipo de los jóvenes</a>
+							<div id="panel5a" class="content">
+								Los jóvenes no participan, son flojos, hay que comprobarles que no es cierto.
+							</div>
+						</dd>
+						<dd>
+							<a href="#panel6a" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspSi no votas, alguien más sí votará</a>
+							<div id="panel6a" class="content">
+								El sistema democrático esta diseñado para que las personas participen, si decides no votar, alguien más estará tomando las decisiones por ti.
+							</div>
+						</dd>
+						<dd>
+							<a href="#panel7a" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspCada voto cuenta</a>
+							<div id="panel7a" class="content">
+								Muchas veces pensamos que nuestro voto no cuenta o no influye, pero en elecciones donde cualquiera de los candidatos puede ganar, cada voto cuenta. En los estados de Oaxaca, Sonora, Colima, los actuales gobernadores ganaron entre 1% y 2% arriba de su contrincante más cercano.
+							</div>
+						</dd>
+						<dd>
+							<a href="#panel8a" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspPara hacer ruído</a>
+							<div id="panel8a" class="content">
+								Quieres hacer ruido, la forma que los funcionarios públicos voltean a ver a los jóvenes y que realmente empiecen a atender las causas de nosotros, es haciendo ruido. El ruido lo puedes lograr al participando activamente en campañas de promoción de un voto educado, razonado y en campañas de observación electoral.
+							</div>
+						</dd>
+						<dd>
+							<a href="#panel9a" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspPorque puedes elegir</a>
+							<div id="panel9a" class="content">
+								Tienes todo el derecho de ir a votar por el candidato que más te guste o hasta anular tú boleta si ninguno te convence. Esta es la forma que te puedes expresar.
+							</div>
+						</dd>
+					</dl>
+					<h2>¡Inspirate!</h2>
+					<div id="cbp-qtrotator" class="cbp-qtrotator">
+						<div class="cbp-qtcontent">
+							<!-- <img src="images/1.jpg" alt="img01" /> -->
+							<blockquote>
+							  <p>Cuanto menos se tiene más importante es tu voto. Los votos construyen hospitales. Con la indiferencia no se construye nada</p>
+							  <footer>Alfredo Pérez Rubalcaba</footer>
+							</blockquote>
+						</div>
+						<div class="cbp-qtcontent">
+							<!-- <img src="images/2.jpg" alt="img02" /> -->
+							<blockquote>
+							  <p>El voto es el instrumento más poderoso jamás concebido por el hombre para derribar la injusticia y destruir las terribles paredes que encarcelan a hombres por ser diferentes de otros hombres</p>
+							  <footer>Lyndon B. Johnson</footer>
+							</blockquote>
+						</div>
+						<div class="cbp-qtcontent">
+							<!-- <img src="images/3.jpg" alt="img03" /> -->
+							<blockquote>
+							  <p>Un hombre sin un voto es un hombre sin protección</p>
+							  <footer>Lyndon B. Johnson</footer>
+							</blockquote>
+						</div>
+						<div class="cbp-qtcontent">
+							<!-- <img src="images/4.jpg" alt="img04" /> -->
+							<blockquote>
+							  <p>El futuro no está escrito, porque sólo el pueblo puede escribirlo</p>
+							  <footer>Adolfo Suárez</footer>
+							</blockquote>
+						</div>
+						<div class="cbp-qtcontent">
+							<!-- <img src="images/4.jpg" alt="img04" /> -->
+							<blockquote>
+							  <p>Las elecciones, a veces, son la venganza del ciudadano. La papeleta es un puñal de papel</p>
+							  <footer>David Lloyd George</footer>
+							</blockquote>
+						</div>
+					</div>
+					<h2>Ahora que ya sabes por qué votar, te animamos a saber <a href="/step2">cómo hacerlo</a></h2>
+				</div>
+			</div>
+
+			<!-- step 2 -->
+			<div id="step2-template">
+				<div class="section">
+					<h1>¿Cómo ejercer el derecho al voto?</h1>
+					<div class="video">
+						<iframe width="560" height="315" src="http://www.youtube.com/embed/Fwf-6Ly7N9A?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+
+			<!-- step 3 -->
+			<div id="step3-template">
+				<div class="section">
+					<h1>¿Por quién debo votar?</h1>
+					<div class="video">
+						<iframe width="560" height="315" src="http://www.youtube.com/embed/4v9Td-KobvM?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<h2>Guía de candidatos</h2>
+					<p class="text-justify">A continuación presentamos los actuales candidatos a la presidencia de la nación. Recuerda: El destino de tu país está en tus manos !Es tu deber tomar una buena desición!</p>
+				</div>
+			</div>
+
+			<!-- social -->
+			<div id="social-template">
+				<div class="section dark">
+					<h1>Ultimas interacciones</h1>
+					<h3>@appelecciones</h3>
+					<ul class="timeline slim">
+						<li>
+							<div class="icon">
+								<i class="fa fa-comment"></i>
+							</div>
+							<div class="event activity">
+								<p><a class="username" href="#">sds</a></p>
+								<p>sadaa</p>
+								<p class="date bottom">03 de may 23:42</p>
+							</div>
+						</li><li>
+							<div class="icon">
+								<i class="fa fa-comment"></i>
+							</div>
+							<div class="event activity">
+								<p><a class="username" href="#">Nestor</a></p>
+								<p>SApodijakdasas das djasidadiasj dasdiasd dasdaksd as</p>
+								<p class="date bottom">22 de abr 02:21</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- candidate -->
+			<div id="candidate-template">
+				<div class="section for-candidate">
+					<h1>Nombre Candidato</h1>
+					<div class="video">
+						<iframe width="560" height="315" src="http://www.youtube.com/embed/RjO11d1fP_o?controls=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<dl class="accordion" data-accordion="">
+						<dd>
+							<a href="#panel1b" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspBiografía</a>
+							<div id="panel1b" class="content">
+								Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							</div>
+						</dd>
+						<dd>
+							<a href="#panel2b" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspPropuestas</a>
+							<div id="panel2b" class="content">
+								Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							</div>
+						</dd>
+						<dd>
+							<a href="#panel3b" data-bypass><i class="fa fa-plus-square-o"></i>&nbsp&nbspEquipo de campaña</a>
+							<div id="panel3b" class="content">
+								Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							</div>
+						</dd>
+					</dl>
+					<h2>@candidato</h2>
+					<img src="img/santos.jpg" />
+					<ul class="timeline slim">
+						<li>
+							<div class="icon">
+								<i class="fa fa-comment"></i>
+							</div>
+							<div class="event activity">
+								<p><a class="username" href="#">sds</a></p>
+								<p>sadaa</p>
+								<p class="date bottom">03 de may 23:42</p>
+							</div>
+						</li><li>
+							<div class="icon">
+								<i class="fa fa-comment"></i>
+							</div>
+							<div class="event activity">
+								<p><a class="username" href="#">Nestor</a></p>
+								<p>SApodijakdasas das djasidadiasj dasdiasd dasdaksd as</p>
+								<p class="date bottom">22 de abr 02:21</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- home -->
+			<div id="home-template">
+				<div class="main-site">
+					<div class="header">
+						<h1>Elecciones Presidenciales</h1>
+					</div>
+					<div class="candidates show-for-medium-up">
+						<div class="candidate" style="background-image: url(img/lopez.jpg)">
+							<p>Clara Lopez</p>
+						</div>
+						<div class="candidate" style="background-image: url(img/penaloza.jpg)">
+							<p>Enrquique Peñaloza</p>
+						</div>
+						<div class="candidate" style="background-image: url(img/ramirez.jpg)">
+							<p>Marta Lucía Ramirez</p>
+						</div>
+						<div class="candidate" style="background-image: url(img/santos.jpg)">
+							<p>Juan Manuel Santos</p>
+						</div>
+						<div class="candidate" style="background-image: url(img/zuluaga.jpg)">
+							<p>Oscar Iván Zuluaga</p>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+					<div style="clear:both"></div>
+					<div class="counter">
+						<h2><i class="fa fa-calendar"></i> Faltan 20 días</h2>
+					</div>
+					<div class="steps clearfix rows">
+						<div class="small-12 medium-4 columns">
+							<a href="/step1" class="step step-1"><h2><span class="number">1</span> ¿Por qué votar?</h2></a>
+						</div>
+						<div class="small-12 medium-4 columns">
+							<a href="/step2" class="step step-2"><h2><span class="number">2</span> ¿Cómo votar?</h2></a>
+						</div>
+						<div class="small-12 medium-4 columns">
+							<a href="/step3" class="step step-3"><h2><span class="number">3</span> ¿Por quién votar?</h2></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,5 +1,338 @@
-h1 {
-    span {
-        color: red;
-    }
+@import "_base";
+
+.app, .inner-wrap, .off-canvas-wrap, .inner-nav, .main-section, .steps {
+	height: 100%;
 }
+
+.tab-bar {
+	background: $primary;
+	.left-small {
+		border-right-color: black(0.1);
+	}
+	h1 {
+		@include sans(18, normal, white);
+		line-height: 45px;
+	}
+	.social {
+		color: white;
+		display: block;
+		height: 45px;
+		line-height: 45px;
+		padding: 0 16px;
+	}
+}
+
+#main-section {
+	height: 100%;
+	overflow-y: auto;
+	padding-bottom: 44px;
+}
+
+body {
+	background: url(../img/banner.jpg) center center no-repeat fixed;
+	background-size: cover;
+}
+
+.header {
+	height: rc(160);
+	position: relative;
+	h1 {
+		@include absolute-expanded;
+		@include sans(50, 300, white);
+		margin: 0;
+		padding-top: rc(16);
+		@media #{$medium-up} {
+			font-size: rc(64);
+			padding-top: rc(40);
+		}
+	}
+}
+
+.candidates {
+	border: 10px solid black(0.5);
+	.candidate {
+		background: transparent center center no-repeat;
+		background-size: cover;
+		float: left;
+		height: 200px;
+		position: relative;
+		width: 20%;
+		p {
+			@include absolute-expanded(auto);
+			@include sans(18, normal, white(0.8));
+			background: black(0.75);
+			display: none;
+			margin: 0;
+			padding: 16px;
+		}
+		&:hover {
+			p { display: block; }
+		}
+	}
+}
+
+.candidates-list {
+	.candidate {
+		background: $primary;
+		height: 80px;
+		position: relative;
+		margin-bottom: rc(8);
+		.illustration {
+			height: 80px;
+			width: 20%;
+			float: left;
+			background: transparent center center no-repeat;
+			background-size: cover;
+		}
+		p {
+			@include sans(18, normal, white(0.95));
+			height: 80px;
+			width: 80%;
+			float: right;
+			margin: 0;
+			padding: 16px;
+			.party {
+				color: white(0.8);
+			}
+		}
+	}
+}
+
+.counter {
+	background: black(0.3);
+	padding: rc(12);
+	h2 {
+		@include sans(32, 300, white(0.8));
+		margin: 0;
+	}
+}
+
+.steps {
+	clear: both;
+	padding-top: rc(16);
+	.step {
+		display: block;
+		margin-top: rc(8);
+		overflow: hidden;
+		padding: rc(8);
+		position: relative;
+		&.step-1 { background: $yellow; }
+		&.step-2 { background: $blue; }
+		&.step-3 { background: $red; }
+		h3 {
+			@include sans(24, normal, white);
+			padding-left: rc(80);
+			text-align: left;
+			.number {
+				@include absolute-tlwh(50%, rc(8));
+				@include circular-icon(rc(72), white(0.25), white(0.25), white, rc(32));
+				margin-top: rc(-36);
+				z-index: 0;
+			}
+		}
+	}
+	p {
+		padding-top: rc(16);
+		padding-bottom: 0;
+	}
+	h3.error {
+		margin: rc(-10 0 16);
+		color: $red;
+		font-size: rc(18);
+	}
+	a.button {
+		margin-bottom: rc(16);
+	}
+}
+
+ul.team {
+	list-style: none;
+	li {
+		line-height: 48px;
+		margin-bottom: 8px;
+		img {
+			width: 48px;
+			height: 48px;
+			float: left;
+			margin-right: 16px;
+		}
+	}
+}
+
+.accordion {
+	dd {
+		a {
+			background: $primary;
+			color: white;
+			font-size: rc(20);
+			&:hover {
+				background: $lprimary;
+			}
+		}
+		&.active {
+			a { background: $dprimary; }
+		}
+	}
+}
+
+.section {
+	background: white(0.9);
+	padding: rc(16);
+	padding-bottom: rc(48);
+	&.transparent {
+		background: white(0.3);
+	}
+	&.dark {
+		background: $dblue;
+	}
+	@media #{$medium-up} {
+		padding: rc(32);
+	}
+	h1 {
+		color: $blue;
+		margin: 0;
+		padding: rc(16 0);
+		@media #{$medium-up} {
+			@include sans(50, normal, $blue);
+		}
+	}
+	h2 {
+		margin-top: rc(32);
+		padding: rc(24 0 8);
+		border-top: 1px solid black(0.1);
+		a {
+			font-size: rc(32);
+		}
+	}
+	.video {
+		padding-bottom: rc(16);
+	}
+	bloquote {
+		padding-bottom: rc(16);	
+	}
+	p.slogan {
+		@include sans(32, normal, $gray-8);
+		text-align: center;
+	}
+}
+
+.main-site {
+	@media #{$small-only} {
+		padding: rc(0 16);
+	}
+	footer {
+		@include absolute-expanded(auto);
+		p {
+			@include sans(18, normal, white(0.85));
+			text-align: center;
+			margin-bottom: 0;
+			padding: 8px;
+		}
+	}
+}
+
+
+#presidentate_social, #candidate-social-1, #candidate-social-2, #candidate-social-3, #candidate-social-4, #candidate-social-5 {
+	h2 {
+	  clear:both;
+	}
+
+	p, a {
+	  font-size: 14px;
+	  margin:10px 0 0 0;
+	  color:#3d3d3d;
+	}
+
+	a, a:visited {
+	  color:#427fed;
+	}
+
+	a:hover {
+	  color:#82afff;
+	}
+
+	ul li {
+	  list-style:none;
+	  overflow:hidden;
+	  border:1px solid #dedede;
+	  margin:5px;
+	  padding:5px;
+	  background: white;
+	}
+
+	.user, .tweet, .timePosted {
+	  float:left;
+	}
+
+	.user {
+	  width:25%;
+	  @media #{$medium-up} {
+	  	width:10%;
+	  }
+	}
+
+	.tweet {
+	  width:75%;
+	  padding-left: 8px;
+	  margin-top: 0 !important;
+	  @media #{$medium-up} {
+	  	width:90%;
+	  }
+	}
+
+	.timePosted {
+	  width:15%;
+	}
+
+	.user {
+	  clear:left;
+	}
+
+	.user a {
+	 width: 100px;
+	}
+
+	.user span span {
+	  width:100px;
+	  display:block;
+	  margin-top:10px;
+	}
+
+	.user img, .user a > span {
+	  float:left;
+	}
+
+	.interact {
+	  display: none;
+	}
+
+	.interact a {
+	  margin-left:5px;
+	  float:left;
+	}
+
+	.user a > span {
+	  margin-left:10px;
+	}
+
+	#linkage {
+	  position:fixed;
+	  top:0px;
+	  right:0px;
+	  background-color:#3d3d3d;
+	  color:#ffffff;
+	  text-decoration:none;
+	  padding:5px;
+	  width:10%;
+	  font-family:arial;
+	}
+
+	.user a > span {
+		display: none;
+	}
+}
+
+
+
+
+

@@ -1,0 +1,123 @@
+/* timeline */
+
+.timeline {
+	list-style: none;
+	margin: rc(30) 0 0 0;
+	padding: 0 0 32px;
+	position: relative;
+	overflow: hidden;
+	&:before {
+		@include absolute-expanded(rc(-40), rc(40), auto, rc(-40));
+		background: darken($gray-d, 10%);
+		content: '';
+		width: rc(10);
+	}
+	& > li {
+		position: relative;
+		&.load-more {
+			margin-bottom: rc(80);
+		}
+		.event {
+			background: $gray-fa;
+			margin: rc(0 40 15 84);
+			padding: rc(10 10 0);
+			position: relative;
+			&:after {
+				border: solid transparent;
+				border-right-color: $gray-fa;
+				border-width: rc(10);
+				content: '';
+				height: 0;
+				left: rc(-19);
+				pointer-events: none;
+				position: absolute;
+				top: rc(10);
+				width: 0;
+			}
+		}
+		.icon {
+			@include absolute-tlwh(0, rc(25), auto, auto);
+			@include circular-icon(rc(40), $gray-f4, $primary, $gray-7, rc(21));
+			box-shadow: 0 0 0 8px darken($gray-d, 10%);
+			cursor: pointer;
+		}
+	}
+	.load-more {
+		margin-left: rc(50);
+		a {
+			background: black(0.05);
+			color: $light-text;
+			display: block;
+			font-size: rc(16);
+			padding: rc(10);
+			text-align: center;
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+	&.slim {
+		margin-top: rc(16);
+		&:before {
+			@include absolute-expanded(rc(20), rc(24), auto, rc(-30));
+			width: rc(6);
+		}
+		& > li {
+			.event {
+				border-right: 3px solid $primary;
+				margin: rc(0 0 16 50);
+				padding: rc(16);
+				&:after {
+					border-width: rc(6);
+					left: rc(-12);
+					top: rc(10);
+				}
+				&.activity {
+					a { @include sans(16, normal, $primary); }
+					p {
+						@include sans(16, normal, $half-text);
+						@include uppercase-first;
+						margin-bottom: rc(8);
+					}
+					.date {
+						&.bottom {
+							@include sans(13, normal, $light-text);
+							margin-bottom: 0;
+							text-align: right;
+						}
+					}
+				}
+			}
+			.icon {
+				@include absolute-tlwh(rc(5), rc(15), auto, auto);
+				@include circular-icon(rc(24), $gray-f4, lighten($primary, 7%), $gray-b, rc(13));
+				box-shadow: 0 0 0 5px darken($gray-d, 10%);
+				&:hover { box-shadow: 0 0 0 5px $primary; }
+				&, i { @include transition-ex(none); }
+				i { margin: 5px 0 0 0; }
+			}
+		}
+		&.single-line {
+			& > li {
+				.event {
+					padding: rc(8);
+					&.activity {
+						margin-right: 0;
+						p { 
+							@include ellipsis;
+							margin: 0;
+							.description {
+								float: left;
+							}
+							.time {
+								font-size: rc(14);
+								color: $light-text;
+								float: right;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+} 

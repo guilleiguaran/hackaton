@@ -1,0 +1,89 @@
+/* custom fonts */
+
+@font-face {
+	font-family: LatoLight;
+	src: font-url('LatoLight.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: LatoRegular;
+	src: font-url('LatoRegular.ttf') format('truetype');
+}
+
+
+
+/* force chrome to render svg */
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	@font-face {
+		font-family: 'FontAwesome';
+		src: url('../fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: LatoLight;
+		src: url('../fonts/LatoLight.svg') format('svg');
+	}
+	@font-face {
+		font-family: LatoRegular;
+		src: url('../fonts/LatoRegular.svg') format('svg');
+	}
+	@font-face {
+		font-family: LatoLightItalic;
+		src: url('../fonts/LatoLightItalic.svg') format('svg');
+	}
+}
+
+
+
+/* font families */
+
+$lato-light : LatoLight, 'Segoe UI Light', Helvetica, Arial, sans-serif;
+$lato-normal : LatoRegular, 'Segoe UI', Helvetica, Arial, sans-serif;
+$lato-light-italic : LatoLightItalic, 'Segoe UI Light Italic', Helvetica, Arial, sans-serif;
+
+
+
+/* font mixins */
+
+@mixin base-font($size, $weight: normal, $color: $full-text) {
+	font-size: rc($size);
+	font-weight: $weight;
+	color: $color;
+	line-height: rc($size * 1.25);
+}
+
+@mixin sans($size: rc(16), $weight: normal, $color: $full-text, $style: regular) {
+	@include base-font($size, $weight, $color);
+	@if $weight == 300 { font-family: $lato-light; }
+	@if $weight == normal { font-family: $lato-normal; }
+	@if $style == italic { font-family: $lato-light-italic; }
+}
+
+
+/* utility mixins */
+
+@mixin title($color: $primary) {
+	@include sans(44, 300, $color);
+	@include uppercase-first;
+	line-height: rc(49);
+}
+
+@mixin subtitle($color: $light-text) {
+	@include sans(32, 300, $color);
+	@include uppercase-first;
+	line-height: rc(32);
+}
+
+@mixin ellipsis {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+@mixin uppercase-first {
+	&:first-letter { text-transform: uppercase; }
+}
+
+.uppercased-first { @include uppercase-first; }
