@@ -13,6 +13,7 @@
     onDeviceReady: function() {
       window.router = new AppRouter();
       Backbone.history.start();
+      $.support.cors = true;
     },
     receivedEvent: function(id) {}
   };
@@ -30,13 +31,16 @@
       'step2': 'step2',
       'step3': 'step3',
       'social': 'social',
-      'candidate': 'candidate'
+      'candidate/:id': 'candidate'
     };
 
     AppRouter.prototype.home = function() {
-      var html;
+      var a, b, html;
       html = kb.renderTemplate('home-template', kb.viewModel());
       $('#main-section').html(html);
+      a = new Date();
+      b = new Date('2014-05-25');
+      $('#days-left').html(Math.max(0, b.getDate() - a.getDate() + 1));
       return NProgress.done();
     };
 
@@ -74,25 +78,44 @@
     AppRouter.prototype.social = function() {
       var html;
       html = kb.renderTemplate('social-template', kb.viewModel());
-      return $('#main-section').fadeOut('fast', function() {
+      $('#main-section').fadeOut('fast', function() {
         $('#main-section').html(html);
         $('#main-section').fadeIn();
         return NProgress.done();
       });
+      return twitterFetcher.fetch('463040140948946944', 'presidentate_social', 10, true, true, false);
     };
 
-    AppRouter.prototype.candidate = function() {
+    AppRouter.prototype.candidate = function(id) {
       var html;
-      html = kb.renderTemplate('candidate-template', kb.viewModel());
+      html = kb.renderTemplate("candidate-template-" + id, kb.viewModel());
       return $('#main-section').fadeOut('fast', function() {
         $('#main-section').html(html);
         $('#main-section').fadeIn();
-        return NProgress.done();
+        NProgress.done();
+        if (id === "1") {
+          twitterFetcher.fetch('463050828471734272', 'candidate-social-1', 10, true, true, false);
+        }
+        if (id === "2") {
+          twitterFetcher.fetch('463050431355043841', 'candidate-social-2', 10, true, true, false);
+        }
+        if (id === "3") {
+          twitterFetcher.fetch('463050259950600192', 'candidate-social-3', 10, true, true, false);
+        }
+        if (id === "4") {
+          twitterFetcher.fetch('463050579292348417', 'candidate-social-4', 10, true, true, false);
+        }
+        if (id === "5") {
+          return twitterFetcher.fetch('463039419788709888', 'candidate-social-5', 10, true, true, false);
+        }
       });
     };
 
     AppRouter.prototype.before = function() {
-      return NProgress.start();
+      NProgress.start();
+      return $("*").animate({
+        scrollTop: 0
+      }, 0);
     };
 
     AppRouter.prototype.after = function() {
@@ -109,6 +132,33 @@
 
   $(document).on('click', "[data-bypass]", function(e) {
     return false;
+  });
+
+  $(document).on('click', "#place-query", function(e) {
+    var $id;
+    $id = $('#user-id').val();
+    $("#q-error").hide();
+    $("#q-success").hide();
+    return $.ajax({
+      type: 'GET',
+      url: "http://hackatonpresidencial.herokuapp.com/booths/" + $id + ".jsonp?callback=onSucess",
+      contentType: "application/json",
+      dataType: 'jsonp',
+      crossDomain: true,
+      success: function(res) {
+        window.res = res;
+        $("#q-1").text(res["Departamento"]);
+        $("#q-2").text(res["Municipio"]);
+        $("#q-3").text(res["Puesto"]);
+        $("#q-4").text(res["Dirección Puesto"]);
+        $("#q-5").text(res["Mesa"]);
+        return $("#q-success").fadeIn('fast');
+      },
+      error: function() {
+        return $("#q-error").fadeIn('fast');
+      },
+      complete: function() {}
+    });
   });
 
   $(document).on('click', "a[href^='/']:not([data-bypass])", function(e) {

@@ -6049,6 +6049,31 @@ body {
     .candidates .candidate:hover p {
       display: block; }
 
+.candidates-list .candidate {
+  background: #00a2c1;
+  height: 80px;
+  position: relative;
+  margin-bottom: 0.5rem; }
+  .candidates-list .candidate .illustration {
+    height: 80px;
+    width: 20%;
+    float: left;
+    background: transparent center center no-repeat;
+    background-size: cover; }
+  .candidates-list .candidate p {
+    font-size: 1.125rem;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.40625rem;
+    font-family: LatoRegular, "Segoe UI", Helvetica, Arial, sans-serif;
+    height: 80px;
+    width: 80%;
+    float: right;
+    margin: 0;
+    padding: 16px; }
+    .candidates-list .candidate p .party {
+      color: rgba(255, 255, 255, 0.8); }
+
 .counter {
   background: rgba(0, 0, 0, 0.3);
   padding: 0.75rem; }
@@ -6075,7 +6100,7 @@ body {
       background: #24a4dd; }
     .steps .step.step-3 {
       background: #ed5124; }
-    .steps .step h2 {
+    .steps .step h3 {
       font-size: 1.5rem;
       font-weight: normal;
       color: white;
@@ -6083,7 +6108,7 @@ body {
       font-family: LatoRegular, "Segoe UI", Helvetica, Arial, sans-serif;
       padding-left: 5rem;
       text-align: left; }
-      .steps .step h2 .number {
+      .steps .step h3 .number {
         top: 50%;
         left: 0.5rem;
         width: 0;
@@ -6109,16 +6134,36 @@ body {
         width: 4.5rem;
         margin-top: -2.25rem;
         z-index: 0; }
-        .steps .step h2 .number:hover, .steps .step h2 .number.hovered {
+        .steps .step h3 .number:hover, .steps .step h3 .number.hovered {
           background: rgba(255, 255, 255, 0.25);
           color: white; }
-        .steps .step h2 .number i {
+        .steps .step h3 .number i {
           -webkit-transition: all 0.2s ease-in-out;
           -moz-transition: all 0.2s ease-in-out;
           -o-transition: all 0.2s ease-in-out;
           -ms-transition: all 0.2s ease-in-out;
           transition: all 0.2s ease-in-out;
           margin-left: 1px; }
+  .steps p {
+    padding-top: 1rem;
+    padding-bottom: 0; }
+  .steps h3.error {
+    margin: -0.625rem 0 1rem;
+    color: #ed5124;
+    font-size: 1.125rem; }
+  .steps a.button {
+    margin-bottom: 1rem; }
+
+ul.team {
+  list-style: none; }
+  ul.team li {
+    line-height: 48px;
+    margin-bottom: 8px; }
+    ul.team li img {
+      width: 48px;
+      height: 48px;
+      float: left;
+      margin-right: 16px; }
 
 .accordion dd a {
   background: #00a2c1;
@@ -6131,7 +6176,8 @@ body {
 
 .section {
   background: rgba(255, 255, 255, 0.9);
-  padding: 1rem; }
+  padding: 1rem;
+  padding-bottom: 3rem; }
   .section.transparent {
     background: rgba(255, 255, 255, 0.3); }
   .section.dark {
@@ -6142,7 +6188,7 @@ body {
   .section h1 {
     color: #24a4dd;
     margin: 0;
-    padding: 1rem 0 2rem; }
+    padding: 1rem 0; }
     @media only screen and (min-width: 40.063em) {
       .section h1 {
         font-size: 3.125rem;
@@ -6160,7 +6206,92 @@ body {
     padding-bottom: 1rem; }
   .section bloquote {
     padding-bottom: 1rem; }
+  .section p.slogan {
+    font-size: 2rem;
+    font-weight: normal;
+    color: #888888;
+    line-height: 2.5rem;
+    font-family: LatoRegular, "Segoe UI", Helvetica, Arial, sans-serif;
+    text-align: center; }
 
 @media only screen and (max-width: 40em) {
   .main-site {
     padding: 0 1rem; } }
+.main-site footer {
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute; }
+  .main-site footer p {
+    font-size: 1.125rem;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.40625rem;
+    font-family: LatoRegular, "Segoe UI", Helvetica, Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 8px; }
+
+#presidentate_social h2, #candidate-social-1 h2, #candidate-social-2 h2, #candidate-social-3 h2, #candidate-social-4 h2, #candidate-social-5 h2 {
+  clear: both; }
+#presidentate_social p, #presidentate_social a, #candidate-social-1 p, #candidate-social-1 a, #candidate-social-2 p, #candidate-social-2 a, #candidate-social-3 p, #candidate-social-3 a, #candidate-social-4 p, #candidate-social-4 a, #candidate-social-5 p, #candidate-social-5 a {
+  font-size: 14px;
+  margin: 10px 0 0 0;
+  color: #3d3d3d; }
+#presidentate_social a, #presidentate_social a:visited, #candidate-social-1 a, #candidate-social-1 a:visited, #candidate-social-2 a, #candidate-social-2 a:visited, #candidate-social-3 a, #candidate-social-3 a:visited, #candidate-social-4 a, #candidate-social-4 a:visited, #candidate-social-5 a, #candidate-social-5 a:visited {
+  color: #427fed; }
+#presidentate_social a:hover, #candidate-social-1 a:hover, #candidate-social-2 a:hover, #candidate-social-3 a:hover, #candidate-social-4 a:hover, #candidate-social-5 a:hover {
+  color: #82afff; }
+#presidentate_social ul li, #candidate-social-1 ul li, #candidate-social-2 ul li, #candidate-social-3 ul li, #candidate-social-4 ul li, #candidate-social-5 ul li {
+  list-style: none;
+  overflow: hidden;
+  border: 1px solid #dedede;
+  margin: 5px;
+  padding: 5px;
+  background: white; }
+#presidentate_social .user, #presidentate_social .tweet, #presidentate_social .timePosted, #candidate-social-1 .user, #candidate-social-1 .tweet, #candidate-social-1 .timePosted, #candidate-social-2 .user, #candidate-social-2 .tweet, #candidate-social-2 .timePosted, #candidate-social-3 .user, #candidate-social-3 .tweet, #candidate-social-3 .timePosted, #candidate-social-4 .user, #candidate-social-4 .tweet, #candidate-social-4 .timePosted, #candidate-social-5 .user, #candidate-social-5 .tweet, #candidate-social-5 .timePosted {
+  float: left; }
+#presidentate_social .user, #candidate-social-1 .user, #candidate-social-2 .user, #candidate-social-3 .user, #candidate-social-4 .user, #candidate-social-5 .user {
+  width: 25%; }
+  @media only screen and (min-width: 40.063em) {
+    #presidentate_social .user, #candidate-social-1 .user, #candidate-social-2 .user, #candidate-social-3 .user, #candidate-social-4 .user, #candidate-social-5 .user {
+      width: 10%; } }
+#presidentate_social .tweet, #candidate-social-1 .tweet, #candidate-social-2 .tweet, #candidate-social-3 .tweet, #candidate-social-4 .tweet, #candidate-social-5 .tweet {
+  width: 75%;
+  padding-left: 8px;
+  margin-top: 0 !important; }
+  @media only screen and (min-width: 40.063em) {
+    #presidentate_social .tweet, #candidate-social-1 .tweet, #candidate-social-2 .tweet, #candidate-social-3 .tweet, #candidate-social-4 .tweet, #candidate-social-5 .tweet {
+      width: 90%; } }
+#presidentate_social .timePosted, #candidate-social-1 .timePosted, #candidate-social-2 .timePosted, #candidate-social-3 .timePosted, #candidate-social-4 .timePosted, #candidate-social-5 .timePosted {
+  width: 15%; }
+#presidentate_social .user, #candidate-social-1 .user, #candidate-social-2 .user, #candidate-social-3 .user, #candidate-social-4 .user, #candidate-social-5 .user {
+  clear: left; }
+#presidentate_social .user a, #candidate-social-1 .user a, #candidate-social-2 .user a, #candidate-social-3 .user a, #candidate-social-4 .user a, #candidate-social-5 .user a {
+  width: 100px; }
+#presidentate_social .user span span, #candidate-social-1 .user span span, #candidate-social-2 .user span span, #candidate-social-3 .user span span, #candidate-social-4 .user span span, #candidate-social-5 .user span span {
+  width: 100px;
+  display: block;
+  margin-top: 10px; }
+#presidentate_social .user img, #presidentate_social .user a > span, #candidate-social-1 .user img, #candidate-social-1 .user a > span, #candidate-social-2 .user img, #candidate-social-2 .user a > span, #candidate-social-3 .user img, #candidate-social-3 .user a > span, #candidate-social-4 .user img, #candidate-social-4 .user a > span, #candidate-social-5 .user img, #candidate-social-5 .user a > span {
+  float: left; }
+#presidentate_social .interact, #candidate-social-1 .interact, #candidate-social-2 .interact, #candidate-social-3 .interact, #candidate-social-4 .interact, #candidate-social-5 .interact {
+  display: none; }
+#presidentate_social .interact a, #candidate-social-1 .interact a, #candidate-social-2 .interact a, #candidate-social-3 .interact a, #candidate-social-4 .interact a, #candidate-social-5 .interact a {
+  margin-left: 5px;
+  float: left; }
+#presidentate_social .user a > span, #candidate-social-1 .user a > span, #candidate-social-2 .user a > span, #candidate-social-3 .user a > span, #candidate-social-4 .user a > span, #candidate-social-5 .user a > span {
+  margin-left: 10px; }
+#presidentate_social #linkage, #candidate-social-1 #linkage, #candidate-social-2 #linkage, #candidate-social-3 #linkage, #candidate-social-4 #linkage, #candidate-social-5 #linkage {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  background-color: #3d3d3d;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px;
+  width: 10%;
+  font-family: arial; }
+#presidentate_social .user a > span, #candidate-social-1 .user a > span, #candidate-social-2 .user a > span, #candidate-social-3 .user a > span, #candidate-social-4 .user a > span, #candidate-social-5 .user a > span {
+  display: none; }
