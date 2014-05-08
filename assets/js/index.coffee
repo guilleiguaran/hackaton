@@ -63,6 +63,7 @@ class window.AppRouter extends Backbone.Router
     'step2'         : 'step2'
     'step3'         : 'step3'
     'social'        : 'social'
+    'about'         : 'about'
     'candidate/:id' : 'candidate'
  
   home: ->
@@ -114,6 +115,13 @@ class window.AppRouter extends Backbone.Router
 
     # Fetch APP timeline
     twitterFetcher.fetch('463040140948946944', 'presidentate_social', 10, true, true, false);
+
+  about: ->
+    html = kb.renderTemplate('about-template', kb.viewModel())
+    $('#main-section').fadeOut 'fast', ->
+      $('#main-section').html(html)
+      $('#main-section').fadeIn()
+      NProgress.done()
 
   candidate: (id) ->
     html = kb.renderTemplate("candidate-template-#{id}", kb.viewModel())
