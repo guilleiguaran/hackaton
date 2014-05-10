@@ -31,6 +31,7 @@
       'step2': 'step2',
       'step3': 'step3',
       'social': 'social',
+      'about': 'about',
       'candidate/:id': 'candidate'
     };
 
@@ -84,6 +85,16 @@
         return NProgress.done();
       });
       return twitterFetcher.fetch('463040140948946944', 'presidentate_social', 10, true, true, false);
+    };
+
+    AppRouter.prototype.about = function() {
+      var html;
+      html = kb.renderTemplate('about-template', kb.viewModel());
+      return $('#main-section').fadeOut('fast', function() {
+        $('#main-section').html(html);
+        $('#main-section').fadeIn();
+        return NProgress.done();
+      });
     };
 
     AppRouter.prototype.candidate = function(id) {
